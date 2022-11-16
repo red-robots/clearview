@@ -1483,6 +1483,7 @@ body.subpage #primary{padding-top:20px}
 .homerow2 .column-left .wp-block-cover{height:100%}
 .homerow2 .column-right{padding:0}
 .homerow2 .column-right .wp-block-group__inner-container{padding:10vw 5vw}
+.homerow2 .column-right h2{margin-top:0}
 .homerow2 .wp-block-columns{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .homerow2 .button-blue .wp-block-button__link,.homerow2 .button-blue .wp-element-button{position:relative;bottom:0;margin:5px 15px 0 0}
 .site-footer{background:#fbfaf8;color:#fff;font-size:13px}
