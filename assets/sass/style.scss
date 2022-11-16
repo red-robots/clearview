@@ -1,0 +1,21 @@
+/*!
+Theme Name: Clearview Wealth Management
+Theme URI: https://bellaworksweb.com/
+Author: Bellaworksweb
+Author URI: https://bellaworksweb.com/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bellaworks
+Tags:
+*/
+
+@import "normalize";
+@import "bourbon/bourbon";
+@import "web-fonts-with-css/scss/fontawesome";
+@import "variables";
+@import "modules/animate";
+@import "modules/swiper";
+@import "modules/carousel";
+@import "core";
