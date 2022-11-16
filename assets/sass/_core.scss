@@ -812,7 +812,7 @@ body.subpage {
   padding-bottom: 5px;
   border-bottom: 1px solid $secondary;
 }
-
+.button-blue .wp-block-button__link,
 .button-blue .wp-element-button {
   display: inline-block;
   text-decoration: none;
@@ -846,6 +846,7 @@ body.subpage {
     h2 {
       margin: 0 0 15px;
     }
+    .button-blue .wp-block-button__link,
     .button-blue .wp-element-button {
       box-shadow: 0 6px 6px rgba(0,0,0,0.1);
     }
@@ -876,6 +877,8 @@ body.subpage {
     display: flex;
     justify-content: flex-end;
   }
+
+  .button-blue .wp-block-button__link,
   .button-blue .wp-element-button {
     position: relative;
     bottom: 0;
