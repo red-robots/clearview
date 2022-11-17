@@ -8,6 +8,7 @@ $primary: #3D5588;
 $secondary: #B59473;
 $light_blue: #7EB2DD;
 $subtle_white: #FBFAF8;
+$brown: #B59472;
 
 $font_primary: 'Roboto Flex', sans-serif;
 $font_secondary: 'Lora', serif;
@@ -213,6 +214,19 @@ $wrapper: 1200px;
 
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
+}
+
+
+%flexwrap {
+  @include flexbox();
+  @include flexbox-wrap(wrap);
+  @include flexbox-direction(row);
+}
+
+%flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

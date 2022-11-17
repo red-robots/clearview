@@ -1143,6 +1143,8 @@ button:focus{outline:0}
 .fa-youtube-square:before{content:""}
 .sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
 .sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}
+.circle-elements{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.circle-elements div.percent,.circle-elements .card{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 /*!
  * animate.css -https://daneden.github.io/animate.css/
  * Version - 3.7.2
@@ -1371,7 +1373,7 @@ button.swiper-pagination-bullet{border:0;margin:0;padding:0;-webkit-box-shadow:n
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;-webkit-hyphens:none;hyphens:none;page-break-inside:avoid}
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box}
 pre{font-family:"Courier 10 Pitch",Courier,monospace;font-size:13px;line-height:1.4;color:#000;display:block;position:relative;z-index:1000;border:1px solid #fff;margin:5vw;padding:20px}
-body{font-family:"Roboto Flex",sans-serif;font-size:1.1em;font-weight:300;line-height:1.4;color:#31271d}
+body{font-family:"Roboto Flex",sans-serif;font-size:1.1em;font-weight:300;line-height:1.4;color:#31271d;background:#fbfaf8}
 p{margin:0 0 1.3em;position:relative}
 p.list-title{top:8px}
 section:focus,div:focus{outline:0}
@@ -1482,10 +1484,27 @@ body.subpage #primary{padding-top:20px}
 .homerow2 .column-left{position:absolute;top:0;left:0;width:50%;height:100%}
 .homerow2 .column-left .wp-block-cover{height:100%}
 .homerow2 .column-right{padding:0}
-.homerow2 .column-right .wp-block-group__inner-container{padding:10vw 5vw}
+.homerow2 .column-right .wp-block-group__inner-container{padding:10vw 5vw 11vw}
 .homerow2 .column-right h2{margin-top:0}
 .homerow2 .wp-block-columns{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .homerow2 .button-blue .wp-block-button__link,.homerow2 .button-blue .wp-element-button{position:relative;bottom:0;margin:5px 15px 0 0}
+.homerow3{padding:50px 0 30px}
+.homerow3 .circle{width:266px;height:266px;border-radius:100%;padding:1.1vw;-webkit-box-shadow:0 2px 12px rgba(0,0,0,.07);box-shadow:0 2px 12px rgba(0,0,0,.07);font-size:1.2em;line-height:1.2;color:#b59472}
+.homerow3 .circle .wp-block-group{width:100%;height:100%;border-radius:100%;border:8px solid #b59472;padding:1.3vw;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.homerow3 .circle .wp-block-group p{margin:0}
+.homerow3 .title-border{display:inline-block}
+.homerow3 .wp-block-group.title{text-align:center}
+.circle-elements{max-width:1300px;width:100%;margin:0 auto;padding:0 20px;padding:1.1vw;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.circle-elements .card{position:relative;background:#fff;border-radius:800px;width:265px;height:265px;-webkit-box-shadow:0 2px 12px rgba(0,0,0,.07);box-shadow:0 2px 12px rgba(0,0,0,.07);margin:20px 0}
+.circle-elements div.percent{height:100%;position:relative}
+.circle-elements div.percent:before{content:"";display:block;border-radius:900px;border:1px solid #b59472;position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);width:225px;height:225px}
+.circle-elements div.text{text-align:center;position:absolute;left:0;width:100%;padding:30px;font-size:1.25rem;z-index:10}
+.circle-elements p{margin:0}
+.circle-elements svg{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;vertical-align:bottom;width:250px;height:250px}
+.circle-elements circle{stroke:rgba(181,148,114,0);stroke-width:3px;stroke-dasharray:0;fill:none}
+.circle-elements div.text{color:#b59472}
+.circle-elements .meter{stroke-width:3px;stroke:#b59472;fill:none;-webkit-transition:stroke-dashoffset 1s cubic-bezier(0.43,0.41,0.22,0.91);transition:stroke-dashoffset 1s cubic-bezier(0.43,0.41,0.22,0.91);-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(-90deg) scaleX(-1);transform:rotate(-90deg) scaleX(-1)}
+.circle-elements text{font-size:1.2em;fill:#b59472;font-weight:bold;font-size:1.2em}
 .site-footer{background:#fbfaf8;color:#fff;font-size:13px}
 .site-footer .wrapper{padding-top:50px;padding-bottom:50px}
 .footer-widget{width:100%}

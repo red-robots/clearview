@@ -510,3 +510,29 @@ function get_social_media_html($atts) {
   ob_end_clean();
   return $output;
 }
+
+
+
+add_shortcode( 'circular_elements', 'circular_elements_func' );
+function circular_elements_func( $atts ) {
+  $a = shortcode_atts( array(
+    'columns'=>4
+  ), $atts );
+  $numcol = ($a['columns']) ? $a['columns'] : 4;
+  $output = '';
+  $elements = get_field('circular_elements');
+  if($elements) {
+    ob_start(); ?>
+    <div class="circle-elements columns-<?php echo $numcol ?>">
+    <?php foreach ($elements as $e) { $text = $e['text']; $percent = $e['percentage']; ?>
+    <div class="card"><div class="percent"><?php if ($text) { ?><div class="text"><?php echo $text ?></div> <?php } ?><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" data-value="<?php echo $percent ?>"> <circle r="45" cx="50" cy="50" /> <path class="meter" d="M5,50a45,45 0 1,0 90,0a45,45 0 1,0 -90,0" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="282.78302001953125" stroke-dasharray="282.78302001953125" /> <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="15"></text> </svg></div></div>
+    <?php } ?>
+    </div>
+    <?php $output = ob_get_contents();
+    ob_end_clean();
+  }
+  return $output;
+}
+
+
+

@@ -33,6 +33,7 @@ body {
   font-weight: 300;
   line-height: 1.4;
   color: $color_text_main;
+  background: $subtle_white;
 }
 p {
   margin: 0 0 1.3em;
@@ -870,7 +871,7 @@ body.subpage {
   .column-right {
     padding: 0 0;
     .wp-block-group__inner-container {
-      padding: 10vw 5vw;
+      padding: 10vw 5vw 11vw;
     }
     h2 {
       margin-top: 0;
@@ -889,6 +890,132 @@ body.subpage {
   }
 }
 
+.homerow3 {
+  padding: 50px 0 30px;
+  .circle {
+    width: 266px;
+    height: 266px;
+    border-radius: 100%;
+    padding: 1.1vw;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    font-size: 1.2em;
+    line-height: 1.2;
+    color: $brown;
+    .wp-block-group {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      border: 8px solid $brown;
+      padding: 1.3vw;
+      position: relative;
+      @include flexgroup();
+      @include flexbox-align-items(center);
+      @include flexbox-justify(center);
+      p {
+        margin: 0 0;
+      }
+    }
+  }
+  .title-border {
+    display: inline-block;
+  }
+  .wp-block-group.title {
+    text-align: center;
+  }
+}
+
+.circle-elements {
+  max-width: $wrapper + 100;
+  width: 100%;
+  margin: 0 auto;
+  padding:0 20px;
+  // background: #323232;
+  padding: 1.1vw;
+  @extend %flexwrap;
+  justify-content: space-around;
+  align-items: center;
+  .card {
+    @extend %flexcenter;
+    position: relative;
+    background: #FFF;
+    border-radius: 800px;
+    width: 265px;
+    height: 265px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    margin: 20px 0;
+  }
+  div.percent {
+    @extend %flexcenter;
+    height: 100%;
+    position: relative;
+    &:before {
+      content:"";
+      display: block;
+      border-radius: 900px;
+      border: 1px solid $brown;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 225px;
+      height: 225px;
+    }
+  }
+  div.text {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    font-size: 1.25rem;
+    z-index: 10;
+  }
+  p {
+    margin: 0 0;
+  }
+  &.columns-4 {
+    // .card {
+    //   @include xs {
+    //     width: 50%;
+    //   }
+    //   @include tab {
+    //     width: 25%;
+    //   }
+    // }
+  }
+  svg {
+    display: inline-flex;
+    vertical-align: bottom;
+    width: 250px;
+    height: 250px;
+  }
+
+  circle {
+    stroke: rgba($brown, 0);
+    stroke-width: 3px;
+    stroke-dasharray: 0;
+    fill: none;
+  }
+
+  div.text {
+    color: $brown;
+  }
+  .meter {
+    stroke-width: 3px;
+    stroke: $brown;
+    fill: none;
+    transition: stroke-dashoffset 1s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+    transform-origin: center center;
+    transform: rotate(-90deg) scaleX(-1);
+  }
+
+  text {
+    font-size: 1.2em;
+    fill: $brown;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
 
 
 /* FOOTER */
