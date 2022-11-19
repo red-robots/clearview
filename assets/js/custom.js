@@ -139,4 +139,10 @@ jQuery(document).ready(function ($) {
 
     path.style.strokeDashoffset = Math.max(0, to); //path.nextElementSibling.textContent = `${value}%`;
   });
+  /* Homepage */
+
+  if ($('.homerow4 .column-right img').length) {
+    var home4_img = $('.homerow4 .column-right img').attr('src');
+    $('.homerow4 .column-right').css('background-image', 'url(' + home4_img + ')');
+  }
 });

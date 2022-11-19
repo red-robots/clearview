@@ -924,6 +924,120 @@ body.subpage {
   }
 }
 
+.homerow4 {
+  position: relative;
+  .wp-block-group__inner-container {
+    text-align: center;
+  }
+  h2.title-border {
+    display: inline-block;
+  }
+  .blue-pattern {
+    padding: 20px 20px 0!important;
+    @include tab {
+      padding: 0 0!important;
+    }
+  }
+  .column-left {
+    padding-left: 0;
+    text-align: left;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include desk {
+      padding-left: 15vw;
+      padding-right: 5vw;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.4;
+      text-align: left;
+    }
+  }
+  .column-right {
+    margin: 0 -20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include tab {
+      position: absolute;
+      right: 0;
+      width: 25%;
+      height: 100%;
+      margin: 0 0;
+    }
+    img {
+      visibility: hidden;
+    }
+  }
+  .service {
+    text-align: left;
+    position: relative;
+    padding: 0 15px;
+    @include tab {
+      padding: 15px;
+    }
+    &:before, &:after {
+      content:"";
+      display: block;
+      width: 1px;
+      height: 20px;
+      background: $secondary;
+      position: absolute;
+      top: -27px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    // &:after {
+    //   bottom: -6%;
+    // }
+    @include desk {
+      &:before, &:after {
+        top: 50%;
+        left: -18px;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    &:after {
+      transform: translateY(10px) translateY(-50%) rotate(90deg);
+      @include desk {
+        transform: translateY(-8%) translateY(-50%) rotate(90deg);
+      }
+    }
+    h3.has-medium-font-size, h3 {
+      font-family: $font_primary!important;
+      font-size: 1.4rem!important;
+      font-weight: 300!important;
+      margin: 0 0 10px!important;
+      text-align: left;
+    }
+    .wp-block-group {
+      border: 1px solid $secondary;
+      padding: 20px;
+      height: 100%;
+    }
+    @include max( $midwidth ) {
+      h3.has-medium-font-size, h3 {font-size: 1.2rem!important;}
+    }
+  }
+  .service:first-child {
+    &:before, &:after {
+      display: none;
+    }
+  }
+}
+
+.bordered-columns {
+  position: relative;
+  padding-left: 0!important;
+  padding-right: 0!important;
+  margin: 0 auto!important;
+  @include min( $midwidth ) {
+    margin: 0 -15px!important;
+  }
+}
+
 .circle-elements {
   max-width: $wrapper + 100;
   width: 100%;
@@ -1006,7 +1120,8 @@ body.subpage {
     fill: none;
     transition: stroke-dashoffset 1s cubic-bezier(0.43, 0.41, 0.22, 0.91);
     transform-origin: center center;
-    transform: rotate(-90deg) scaleX(-1);
+    transition-delay: 3s;
+    // transform: rotate(-90deg) scaleX(-1);
   }
 
   text {
@@ -1014,6 +1129,14 @@ body.subpage {
     fill: $brown;
     font-weight: bold;
     font-size: 1.2em;
+  }
+}
+
+.animated {
+  .circle-elements {
+    .meter {
+      transform: rotate(-90deg) scaleX(-1);
+    }
   }
 }
 
