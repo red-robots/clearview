@@ -69,3 +69,13 @@ h1,h2,h3,h4,h5,h6 {
   border: 1px solid #b59473;
   padding: 20px;
 }
+.title-border {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #b59473;
+}
+.wp-block-group.heading {
+  text-align: center;
+}
+.wp-block-group.heading .title-border {
+  display: inline-block;
+}
