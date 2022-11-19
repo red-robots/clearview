@@ -45,13 +45,27 @@ h1,h2,h3,h4,h5,h6 {
 /*  padding-left: 20vw;*/
 }
 
+.editor-styles-wrapper .button .wp-block-button__link,
 .editor-styles-wrapper .button-blue .wp-block-button__link {
   display: inline-block;
   text-decoration: none;
   background: #7eb2dd;
-  padding: 15px 20px;
+  padding: 15px 20px!important;
   color: #FFF;
   font-size: 15px;
   line-height: 1.1;
   margin:0 15px;
+}
+.editor-styles-wrapper .button  {
+  max-width: unset;
+  background: transparent!important;
+  border: none!important;
+  padding: 0 0!important;
+}
+.editor-styles-wrapper .button.drop-shadow .wp-block-button__link {
+  box-shadow: 0 4px 5px rgba(0,0,0,0.15);
+}
+.bordered-columns .service {
+  border: 1px solid #b59473;
+  padding: 20px;
 }

@@ -1473,8 +1473,14 @@ body.subpage #primary{padding-top:20px}
 .entry-content{max-width:1200px;width:100%;min-height:20em;margin:0 auto 50px;padding-left:15px;padding-right:15px}
 .entry-content .wrapper{padding-left:0;padding-right:0}
 .title-border{padding-bottom:5px;border-bottom:1px solid #b59473}
+.wp-block-group.heading{text-align:center}
+.wp-block-group.heading .title-border{display:inline-block;margin:0}
 .button-blue .wp-block-button__link,.button-blue .wp-element-button{display:inline-block;text-decoration:none;background:#7eb2dd;padding:15px 20px;color:#fff;font-size:15px;line-height:1.1;margin:0 15px;position:absolute;bottom:-20px}
 .button-blue .wp-block-button__link:hover,.button-blue .wp-element-button:hover{background:#9ec5e6}
+.wp-block-button.button a{display:inline-block;text-decoration:none;background:#7eb2dd;padding:15px 20px;color:#fff;font-size:15px;line-height:1.1;margin:0 15px}
+.wp-block-button.button a:hover{background:#9ec5e6}
+.wp-block-button.button.drop-shadow a{-webkit-box-shadow:0 4px 5px rgba(0,0,0,.15);box-shadow:0 4px 5px rgba(0,0,0,.15)}
+.wp-block-button.button.drop-shadow a:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
 .homerow1{background-color:#b59473;padding:0 0 0 20vw}
 .homerow1 .textbox{padding:30px;position:relative;-webkit-transform:translateX(-15vw);transform:translateX(-15vw);color:#31271d;-webkit-box-shadow:0 6px 6px rgba(0,0,0,.1);box-shadow:0 6px 6px rgba(0,0,0,.1)}
 .homerow1 .textbox h2{margin:0 0 15px}
@@ -1508,6 +1514,17 @@ body.subpage #primary{padding-top:20px}
 .homerow4 .service h3.has-medium-font-size,.homerow4 .service h3{font-family:"Roboto Flex",sans-serif !important;font-size:1.4rem !important;font-weight:300 !important;margin:0 0 10px !important;text-align:left}
 .homerow4 .service .wp-block-group{border:1px solid #b59473;padding:20px;height:100%}
 .homerow4 .service:first-child:before,.homerow4 .service:first-child:after{display:none}
+.homerow5 .inner{position:relative}
+.homerow5 .wp-block-columns.steps{counter-reset:section}
+.homerow5 .wp-block-columns.steps .step{position:relative;padding-left:100px}
+.homerow5 .wp-block-columns.steps .step h5{font-family:"Roboto Flex",sans-serif !important;margin:0 0 5px}
+.homerow5 .wp-block-columns.steps .step p{font-size:.9em;line-height:1.5}
+.homerow5 .wp-block-columns.steps .step:before{counter-increment:section;content:counter(section);display:inline-block;color:#fff;position:absolute;top:7px;left:30px;z-index:5;font-size:3em}
+.homerow5 .wp-block-columns.steps .step:after{content:"";display:block;width:85px;height:85px;background:#3d5588;border-radius:100%;position:absolute;top:0;left:0}
+.homerow5 .wp-block-group.intro{margin-bottom:40px}
+.homerow5 .wp-block-group.intro p{margin:0 0 20px}
+.homerow5 .wp-block-group.intro p:first-child{margin-top:20px;font-size:1.2em}
+.homerow5 .button-blue .wp-block-button__link,.homerow5 .button-blue .wp-element-button{position:relative}
 .bordered-columns{position:relative;padding-left:0 !important;padding-right:0 !important;margin:0 auto !important}
 .circle-elements{max-width:1300px;width:100%;margin:0 auto;padding:0 20px;padding:1.1vw;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .circle-elements .card{position:relative;background:#fff;border-radius:800px;width:265px;height:265px;-webkit-box-shadow:0 2px 12px rgba(0,0,0,.07);box-shadow:0 2px 12px rgba(0,0,0,.07);margin:20px 0}
