@@ -150,4 +150,10 @@ jQuery(document).ready(function ($) {
     $('.homerow4 .column-right').css('background-image','url('+home4_img+')');
   }
 
+  /* Accordion */
+  $('.accordion .a-title').on('click',function(){
+    $(this).next('.a-text').slideToggle();
+    $(this).parents('.a-panel').toggleClass('active');
+  });
+
 }); 

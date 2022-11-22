@@ -28,6 +28,13 @@ var siteURL = '<?php echo get_site_url();?>';
 var currentURL = '<?php echo get_permalink();?>';
 var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
 </script>
+
+<?php if( is_page() ) { 
+$page_title_visibility = get_field('page_title_visibility'); 
+if( isset($page_title_visibility[0]) && $page_title_visibility[0]=='yes' ) { ?>
+<style>.entry-title{display:none;}</style>
+<?php } ?>
+<?php } ?>
 <?php wp_head(); ?>
 </head>
 <?php 

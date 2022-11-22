@@ -16,14 +16,14 @@ function js_custom_init() {
         'menu_icon' => 'dashicons-groups',
         'supports'  => array('title','editor')
       ),
-      array(
-        'post_type' => 'wins',
-        'menu_name' => 'Wins',
-        'plural'    => 'Wins',
-        'single'    => 'Win',
-        'menu_icon' => 'dashicons-awards',
-        'supports'  => array('title','editor')
-      ),
+      // array(
+      //   'post_type' => 'wins',
+      //   'menu_name' => 'Wins',
+      //   'plural'    => 'Wins',
+      //   'single'    => 'Win',
+      //   'menu_icon' => 'dashicons-awards',
+      //   'supports'  => array('title','editor')
+      // ),
       // array(
       //   'post_type' => 'insights',
       //   'menu_name' => 'Insights',

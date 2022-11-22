@@ -1,31 +1,59 @@
 	</div><!-- #content -->
 	
   <?php 
-  $footer_logo = get_field("footer_logo","option");
+  $foot = get_field("footer_content","option");
+  $col1_logo = ( isset($foot['footer_logo']['url']) && $foot['footer_logo']['url'] ) ? $foot['footer_logo']['url'] : '';
+  $col1_text = ( isset($foot['footer_col1_text']) && $foot['footer_col1_text'] ) ? $foot['footer_col1_text'] : '';
   ?>
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="wrapper wide">
       <div class="flexwrap">
-        <?php if ($footer_logo) { ?>
-        <div class="footer-widget foot-logo">
-         <img src="<?php echo $footer_logo['url'] ?>" alt="<?php echo $footer_logo['title'] ?>" class="footlogo"> 
+        <?php if ($col1_logo || $col1_text) { ?>
+        <div class="fcol fcol1">
+          <?php if ($col1_logo) { ?>
+          <div class="footlogo"><img src="<?php echo $col1_logo ?>" alt="<?php echo $foot['footer_logo']['title'] ?>" /></div>
+          <?php } ?>
+          <?php if ($col1_text) { ?>
+            <div class="text"><?php echo $col1_text ?></div>
+          <?php } ?>
         </div>
         <?php } ?>
 
-        <?php if( have_rows('footerwidgets','option') ) { ?>
-          <?php while( have_rows('footerwidgets','option') ) {  the_row(); 
+        <?php for( $i=2; $i<=4; $i++ ) { 
+          $title = ( isset($foot['footer_col'.$i.'_title']) && $foot['footer_col'.$i.'_title'] ) ? $foot['footer_col'.$i.'_title'] : '';
+          $text = ( isset($foot['footer_col'.$i.'_text']) && $foot['footer_col'.$i.'_text'] ) ? $foot['footer_col'.$i.'_text'] : '';
+          if($text) { ?>
+          <div class="fcol links fcol<?php echo $i?>">
+            <?php if ($title) { ?>
+            <div class="ftitle"><?php echo $title ?></div> 
+            <?php } ?>
+            <div class="ftext"><?php echo $text ?></div> 
+          </div> 
+          <?php } ?>
+        <?php } ?>
 
-          ?>
-          <div class="footer-widget fwidget">
-            <?php if( $widget_title = get_sub_field('title') ) { ?>
-              <h4 class="widgettitle"><?php echo $widget_title ?></h4>
+        <?php 
+        $footer_logos = ( isset($foot['footer_logos']) && $foot['footer_logos'] ) ? $foot['footer_logos'] : ''; 
+        $footer_col5_text = ( isset($foot['footer_col5_text']) && $foot['footer_col5_text'] ) ? $foot['footer_col5_text'] : ''; 
+        if($footer_logos || $footer_col5_text) { ?>
+        <div class="fcol fcol5">
+          <?php if ($footer_logos) { ?>
+          <div class="footer-logos">
+            <div class="inner">
+            <?php foreach ($footer_logos as $foot) { ?>
+            <img src="<?php echo $foot['url'] ?>" alt="<?php echo $foot['title'] ?>">  
             <?php } ?>
-            <?php if( $widget_text = get_sub_field('description') ) { ?>
-              <div class="widgettext"><?php echo $widget_text ?></div>
-            <?php } ?>
+            </div>
           </div>
           <?php } ?>
-      <?php } ?>
+
+          <?php if ($footer_col5_text) { ?>
+          <div class="footer-logos-text">
+            <?php echo $footer_col5_text ?>
+          </div>
+          <?php } ?>
+        </div>
+        <?php } ?>
       </div>
     </div>
 	</footer><!-- #colophon -->

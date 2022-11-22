@@ -60,4 +60,28 @@
       </div>
     </div>
   <?php } ?>
+<?php } else { ?>
+
+
+  <?php  
+  $banner_image = get_field('banner_image');
+  $banner_title = get_field('banner_title');
+  $banner_text = get_field('banner_text');
+  if($banner_image) { ?>
+  <div id="subpage-banner">
+    <div class="banner-image" style="background-image:url('<?php echo $banner_image['url'] ?>')"></div>
+    <?php if ($banner_title || $banner_text) { ?>
+    <div class="banner-text">
+      <div class="banner-inner">
+        <?php if ($banner_title) { ?>
+        <h2 class="title"><?php echo $banner_title ?></h2> 
+        <?php } ?>
+        <?php if ($banner_text) { ?>
+        <div class="text"><?php echo $banner_text ?></div> 
+        <?php } ?>
+      </div>
+    </div>  
+    <?php } ?>
+  </div>
+  <?php } ?>
 <?php } ?>

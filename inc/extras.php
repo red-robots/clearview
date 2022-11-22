@@ -535,4 +535,66 @@ function circular_elements_func( $atts ) {
 }
 
 
+add_shortcode( 'display_team', 'display_team_func' );
+function display_team_func( $atts ) {
+  // $a = shortcode_atts( array(
+  //   'numcol'=>6
+  // ), $atts );
+  // $numcol = ($a['numcol']) ? $a['numcol'] : 6;
+  $output = '';
+  $args = array(
+    'posts_per_page'   => -1,
+    'post_type'        => 'team',
+    'post_status'      => 'publish'
+  );
+  $teams = new WP_Query($args);
+  ob_start();
+  if ( $teams->have_posts() ) {  ?>
+  <div class="team-wrapper">
+    <?php while ( $teams->have_posts() ) : $teams->the_post(); 
+      $photo = get_field('photo');
+      $job_title = get_field('job_title');
+      $accordion = get_field('accordion');
+      $has_columns = ($photo) ? 'half':'full';
+    ?>
+    <div class="team <?php echo $has_columns ?>">
+      <?php if ($photo) { ?>
+      <div class="infocol photo"><figure style="background-image:url('<?php echo $photo['url'] ?>')"><img src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>"></figure></div>  
+      <?php } ?>
+      <div class="infocol details">
+        <div class="titlediv">
+          <h2 class="name"><?php the_title(); ?></h2>
+          <?php if ($job_title) { ?><div class="jobtitle"><?php echo $job_title ?></div><?php } ?>
+        </div>
+        <?php if ( get_the_content() ) { ?>
+        <div class="description"><?php the_content(); ?></div>
+        <?php } ?>
+
+        <?php if ($accordion) { ?>
+        <div class="accordion">
+          <?php foreach ($accordion as $acc) { ?>
+            <?php if ($acc['heading']) { ?>
+            <div class="a-panel">
+              <div class="a-title"><span class="plus"></span><?php echo $acc['heading'] ?></div>
+              <?php if ($acc['content']) { ?>
+              <div class="a-text"><?php echo $acc['content'] ?></div> 
+              <?php } ?>
+            </div>
+            <?php } ?> 
+          <?php } ?>
+        </div>
+        <?php } ?>
+      </div>  
+    </div>
+    <?php endwhile;  ?>
+  </div>
+
+  <?php } 
+  $output = ob_get_contents();
+  ob_end_clean();
+  return  $output;
+}
+
+
+
 

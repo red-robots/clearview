@@ -23,7 +23,7 @@ $midwidth: 960px;
 $deskwidth: 1200px;
 $xxl: 1380px;
 $nav_width: 350px;
-$wrapper: 1200px;
+$wrapper: 1300px;
 
 @mixin xxs { @media (min-width: $portrait) { @content; } }
 @mixin xs { @media (min-width: $xswidth) { @content; } }
