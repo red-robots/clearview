@@ -1546,7 +1546,7 @@ body.logged-in.admin-bar.mobile-menu-open #site-logo{width:135px;top:-7px;right:
 #subpage-banner{width:100%;height:70vh;position:relative}
 #subpage-banner .banner-image{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#ccc;width:100%;height:100%;position:absolute;top:0;left:0}
 #subpage-banner .banner-text{width:100%;height:100%;position:absolute;top:0;left:0;z-index:5;padding:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-#subpage-banner .banner-inner{max-width:700px;width:100%;background:rgba(61,85,136,.8);color:#fff;padding:40px 30px 40px 7vw}
+#subpage-banner .banner-inner{max-width:700px;width:100%;background:rgba(61,85,136,.96);color:#fff;padding:40px 30px 40px 7vw}
 #subpage-banner .banner-inner .title{font-size:2rem;line-height:1.2;margin:0 0 15px;border-bottom:1px solid #b59473}
 #content .entry-content p:empty{display:none}
 .entry-content.fullwidth{max-width:100%;width:100%;padding-left:0;padding-right:0}
