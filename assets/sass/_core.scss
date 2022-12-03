@@ -778,16 +778,6 @@ body.logged-in.admin-bar {
   }
 }
 
-body.subpage {
-  font-size: 1em;
-  line-height: 1.4;
-  @include tab {
-    .site-header {
-      box-shadow: 0 2px 10px rgba(0,0,0,.05);
-    }
-  }
-}
-
 .entry-content {
   max-width: $wrapper;
   width: 100%;
@@ -826,6 +816,55 @@ body.subpage {
   bottom: -20px;
   &:hover {
     background: tint($light_blue,25%);
+  }
+}
+
+body.subpage {
+  font-size: 1em;
+  line-height: 1.4;
+  @include tab {
+    .site-header {
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+  }
+  .entry-content {
+    h2 {
+      color: $secondary;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      span {
+        display: inline-block;
+        border-bottom: 1px solid $secondary;
+      }
+    } 
+    .section-blue {
+      text-align: center;
+      font-size: 1.25em;
+      line-height: 1.4;
+      h2.has-text-align-center {
+        font-size: 2.5rem;
+        font-weight: normal;
+        display: inline-block;
+        position: relative;
+        border-bottom: 1px solid $secondary;
+      }
+    }
+  }
+  .entry-content h2:first-child {
+    font-weight: 500;
+    margin: 0 0 15px;
+    span {
+      font-size: 1.8rem !important;
+    }
+  }
+  &.no-page-title {
+    #main {
+      padding-top: 75px;
+    }
+  }
+  div.wp-block-buttons {
+    argin-top: 45px!important;
   }
 }
 
@@ -1489,6 +1528,72 @@ body.logged-in.admin-bar {
     }
   }
 }
+
+
+.wp-block-group.text-icon {
+  padding: 15px 0;
+  .wp-block-columns {
+    position: relative;
+  }
+  div.icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  h5 {
+    margin: 0 0 5px;
+    font-family: $font_primary!important;
+    font-size: 1.3em;
+    color: $primary;
+  }
+  figure {
+    margin: 0 0;
+  }
+  img {
+    width: auto;
+    height: 50px;
+  }
+  .wp-block-column:not(.icon) {
+    padding-left: 50px;
+  }
+  div.icon.transparency img {
+    height: 38px;
+  }
+  div.icon.individual img {
+    height: 30px;
+  }
+}
+
+.wp-block-button.blue {
+  margin-top: 20px;
+  a {
+    display: inline-block;
+    color: #FFF;
+    background-color: $light_blue;
+    padding: 10px 15px;
+    font-size: 16px;
+    &:hover {
+      background-color: #FFF!important;
+      color: $primary!important;
+    }
+  }
+}
+
+body.page-template-page-fullwidth {
+  #primary .entry-content {
+    max-width: 100%!important;
+    width: 100%!important;
+  }
+
+  .secondary-template {
+    .entry-content {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
 
 /* FOOTER */
 .site-footer {

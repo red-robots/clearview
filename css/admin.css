@@ -79,3 +79,14 @@ h1,h2,h3,h4,h5,h6 {
 .wp-block-group.heading .title-border {
   display: inline-block;
 }
+.wp-block-group.text-icon h5.wp-block-heading {
+  margin-top: 0;
+  margin-block: 10px;
+}
+
+
+
+
+
+
+

@@ -1465,7 +1465,6 @@ h6{font-size:1.2rem}
 .home-carousel .owl-dots .owl-dot{display:inline-block;width:12px;height:12px;background:#ccc;border-radius:100px;margin:5px;padding:0 0 !important}
 .home-carousel .owl-dots .owl-dot.active{background:#b59473}
 .home-carousel .owl-stage{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:0 auto}
-body.subpage{font-size:1em;line-height:1.4}
 .entry-content{max-width:1300px;width:100%;min-height:20em;margin:0 auto 50px;padding-left:15px;padding-right:15px}
 .entry-content .wrapper{padding-left:0;padding-right:0}
 .title-border{padding-bottom:5px;border-bottom:1px solid #b59473}
@@ -1473,6 +1472,15 @@ body.subpage{font-size:1em;line-height:1.4}
 .wp-block-group.heading .title-border{display:inline-block;margin:0}
 .button-blue .wp-block-button__link,.button-blue .wp-element-button{display:inline-block;text-decoration:none;background:#7eb2dd;padding:15px 20px;color:#fff;font-size:15px;line-height:1.1;margin:0 15px;position:absolute;bottom:-20px}
 .button-blue .wp-block-button__link:hover,.button-blue .wp-element-button:hover{background:#9ec5e6}
+body.subpage{font-size:1em;line-height:1.4}
+body.subpage .entry-content h2{color:#b59473;font-size:20px;font-style:normal;font-weight:400}
+body.subpage .entry-content h2 span{display:inline-block;border-bottom:1px solid #b59473}
+body.subpage .entry-content .section-blue{text-align:center;font-size:1.25em;line-height:1.4}
+body.subpage .entry-content .section-blue h2.has-text-align-center{font-size:2.5rem;font-weight:normal;display:inline-block;position:relative;border-bottom:1px solid #b59473}
+body.subpage .entry-content h2:first-child{font-weight:500;margin:0 0 15px}
+body.subpage .entry-content h2:first-child span{font-size:1.8rem !important}
+body.subpage.no-page-title #main{padding-top:75px}
+body.subpage div.wp-block-buttons{argin-top:45px !important}
 .wp-block-button.button a{display:inline-block;text-decoration:none;background:#7eb2dd;padding:15px 20px;color:#fff;font-size:15px;line-height:1.1;margin:0 15px}
 .wp-block-button.button a:hover{background:#9ec5e6}
 .wp-block-button.button.drop-shadow a{-webkit-box-shadow:0 4px 5px rgba(0,0,0,.15);box-shadow:0 4px 5px rgba(0,0,0,.15)}
@@ -1562,6 +1570,20 @@ body.logged-in.admin-bar.mobile-menu-open #site-logo{width:135px;top:-7px;right:
 .team-wrapper .accordion .a-text p{margin:15px 0 0}
 .team-wrapper .accordion .a-text p:first-child{margin-top:0}
 .team-wrapper .accordion .a-panel.active .a-title .plus:before{opacity:0;-webkit-transform:rotate(0);transform:rotate(0)}
+.wp-block-group.text-icon{padding:15px 0}
+.wp-block-group.text-icon .wp-block-columns{position:relative}
+.wp-block-group.text-icon div.icon{position:absolute;top:0;left:0}
+.wp-block-group.text-icon h5{margin:0 0 5px;font-family:"Roboto Flex",sans-serif !important;font-size:1.3em;color:#3d5588}
+.wp-block-group.text-icon figure{margin:0}
+.wp-block-group.text-icon img{width:auto;height:50px}
+.wp-block-group.text-icon .wp-block-column:not(.icon){padding-left:50px}
+.wp-block-group.text-icon div.icon.transparency img{height:38px}
+.wp-block-group.text-icon div.icon.individual img{height:30px}
+.wp-block-button.blue{margin-top:20px}
+.wp-block-button.blue a{display:inline-block;color:#fff;background-color:#7eb2dd;padding:10px 15px;font-size:16px}
+.wp-block-button.blue a:hover{background-color:#fff !important;color:#3d5588 !important}
+body.page-template-page-fullwidth #primary .entry-content{max-width:100% !important;width:100% !important}
+body.page-template-page-fullwidth .secondary-template .entry-content{padding-left:0;padding-right:0;margin-bottom:0}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}

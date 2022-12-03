@@ -29,9 +29,11 @@ var currentURL = '<?php echo get_permalink();?>';
 var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
 </script>
 
-<?php if( is_page() ) { 
+<?php 
+$is_page_title_visible = true;
+if( is_page() ) { 
 $page_title_visibility = get_field('page_title_visibility'); 
-if( isset($page_title_visibility[0]) && $page_title_visibility[0]=='yes' ) { ?>
+if( isset($page_title_visibility[0]) && $page_title_visibility[0]=='yes' ) { $is_page_title_visible=false; ?>
 <style>.entry-title{display:none;}</style>
 <?php } ?>
 <?php } ?>
@@ -39,6 +41,12 @@ if( isset($page_title_visibility[0]) && $page_title_visibility[0]=='yes' ) { ?>
 </head>
 <?php 
 $extraClass = '';
+if($is_page_title_visible) {
+  $extraClass = 'has-page-title';
+} else {
+  $extraClass = 'no-page-title';
+}
+if($page_title_visibility) 
 $headerButton = get_field('header_cta_button','option');
 $hBtnLink = (isset($headerButton['url']) && $headerButton['url']) ? $headerButton['url'] : '';
 $hBtnTitle = (isset($headerButton['title']) && $headerButton['title']) ? $headerButton['title'] : '';
