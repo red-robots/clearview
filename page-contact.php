@@ -3,7 +3,6 @@
  * Template Name: Contact
  */
 get_header(); 
-$banner = get_field('header_image');
 ?>
 <div id="primary" class="content-area default-template contact-page has-sidebar-graphic">
 	<main id="main" class="site-main">
