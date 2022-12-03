@@ -1572,16 +1572,18 @@ body.page-template-page-new {
 
 .wp-block-button.blue {
   margin-top: 20px;
-  a {
-    display: inline-block;
-    color: #FFF;
-    background-color: $light_blue;
-    padding: 10px 15px;
-    font-size: 16px;
-    &:hover {
-      background-color: #FFF!important;
-      color: $primary!important;
-    }
+}
+.blue-button,
+.wp-block-button.blue a {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  background-color: $light_blue;
+  padding: 10px 15px;
+  font-size: 16px;
+  &:hover {
+    background-color: #FFF!important;
+    color: $primary!important;
   }
 }
 
@@ -1627,11 +1629,28 @@ body.page-template-page-fullwidth {
       width: 100%;
       float: left;
       @include backgroundImage(center);
-      background-color: #CCC;
+      background-color: #e8e8e8;
+      position: relative;
       img {
         width: 100%;
         height: auto;
         float: left;
+      }
+    }
+    &.no-image {
+      figure:before {
+        content:"Photo not available";
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: #b2b2b2;
       }
     }
     .textcol {
@@ -1716,6 +1735,22 @@ body.page-template-page-fullwidth {
         color: tint($secondary,30%);
       }
     }
+  }
+}
+
+.moreposts {
+  margin-top: 30px;
+  text-align: center;
+  .blue-button {
+    &:hover {
+      color: #FFF!important;
+      background: #307ab8!important;
+    }
+  }
+  b {
+    font-weight: normal;
+    font-size: 13px;
+    color: #a8a8a8;
   }
 }
 

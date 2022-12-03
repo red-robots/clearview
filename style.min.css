@@ -1581,16 +1581,17 @@ body.page-template-page-new #subpage-banner{height:350px}
 .wp-block-group.text-icon div.icon.transparency img{height:38px}
 .wp-block-group.text-icon div.icon.individual img{height:30px}
 .wp-block-button.blue{margin-top:20px}
-.wp-block-button.blue a{display:inline-block;color:#fff;background-color:#7eb2dd;padding:10px 15px;font-size:16px}
-.wp-block-button.blue a:hover{background-color:#fff !important;color:#3d5588 !important}
+.blue-button,.wp-block-button.blue a{display:inline-block;text-decoration:none;color:#fff;background-color:#7eb2dd;padding:10px 15px;font-size:16px}
+.blue-button:hover,.wp-block-button.blue a:hover{background-color:#fff !important;color:#3d5588 !important}
 body.page-template-page-fullwidth #primary .entry-content{max-width:100% !important;width:100% !important}
 body.page-template-page-fullwidth .secondary-template .entry-content{padding-left:0;padding-right:0;margin-bottom:0}
 .news-feeds{margin-bottom:80px}
 .news-feeds .grid{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .news-feeds .post-item{width:100%;padding:15px}
 .news-feeds .post-item .inside{height:100%;position:relative;background:#fff}
-.news-feeds .post-item figure{margin:0;width:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#ccc}
+.news-feeds .post-item figure{margin:0;width:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#e8e8e8;position:relative}
 .news-feeds .post-item figure img{width:100%;height:auto;float:left}
+.news-feeds .post-item.no-image figure:before{content:"Photo not available";display:block;width:100%;text-align:center;text-transform:uppercase;font-size:12px;letter-spacing:2px;position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);color:#b2b2b2}
 .news-feeds .post-item .textcol{width:100%;float:left;padding:15px}
 .news-feeds .post-item .title{font-family:"Roboto Flex",sans-serif !important;font-size:14px;font-weight:500;line-height:1.2;color:#3d5588;margin:0 0 10px}
 .news-feeds .post-item .title a{display:inline-block;text-decoration:none;color:#3d5588}
@@ -1605,6 +1606,9 @@ body.page-template-page-fullwidth .secondary-template .entry-content{padding-lef
 .news-feeds .metadata span:last-child:before{content:"";display:inline-block;width:1px;height:100%;background:#b59473;position:absolute;top:0;left:0}
 .news-feeds .metadata a{display:inline-block;text-decoration:none;color:#b59473;font-weight:600}
 .news-feeds .metadata a:hover{color:#cbb49d}
+.moreposts{margin-top:30px;text-align:center}
+.moreposts .blue-button:hover{color:#fff !important;background:#307ab8 !important}
+.moreposts b{font-weight:normal;font-size:13px;color:#a8a8a8}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}

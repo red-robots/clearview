@@ -48,7 +48,7 @@ get_header(); ?>
                 $termLink = ($term) ? get_term_link($term[0],'category') : '';
 
                 ?>
-                <article id="post-id-<?php echo $id ?>" class="post-item <?php echo ($featImage) ? 'has-image':'no-image' ?>">
+                <article id="post-id-<?php echo $id ?>" class="post-item animated fadeIn <?php echo ($featImage) ? 'has-image':'no-image' ?>">
                   <div class="inside">
                       <figure class="imagecol"<?php echo $stylebg ?>>
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/rectangle.png" alt="" aria-hidden="true" />
@@ -72,40 +72,37 @@ get_header(); ?>
                 </article>
             <?php endwhile; wp_reset_postdata(); ?>
           </div>
-        </div>
 
-        <div class="wrapper" style="display:none;">
           <?php
-            $total_pages = $blogs->max_num_pages;
-            $totalpost = $blogs->found_posts; 
-
-            if ($total_pages > 1){ ?>
-              <div class="moreposts">
-                <span class="lastposts hide">No more posts to load.</span>
-                <a href="#" id="morepageBtn" data-posttype="post" data-total="<?php echo $totalpost ?>" data-pg="1">More Posts</a>
-              </div>
-              <div id="pagination" class="pagination clear">
-                  <?php
-                      $pagination = array(
-                          'base' => @add_query_arg('pg','%#%'),
-                          'format' => '?paged=%#%',
-                          'current' => $paged,
-                          'total' => $total_pages,
-                          'prev_text' => __( '&laquo;', 'red_partners' ),
-                          'next_text' => __( '&raquo;', 'red_partners' ),
-                          'type' => 'plain'
-                      );
-                      echo paginate_links($pagination);
-                  ?>
-              </div>
-              <?php
-            } ?>
+          $total_pages = $blogs->max_num_pages;
+          if ($total_pages > 1){ ?>
+            <div class="moreposts">
+              <a href="javascript:void(0)" id="load-more" data-totalpages="<?php echo $total_pages ?>" data-total="<?php echo $totalpost ?>" data-pg="1" class="blue-button">Load More Articles</a>
+            </div>
+            <?php
+          } ?>
         </div>
-        
       </section>
       <?php } ?>
-
   </main>
 </div>
+
+<script>
+jQuery(document).ready(function($){
+  $(document).on('click','#load-more',function(e){
+    e.preventDefault();
+    var total_pages = $(this).attr('data-totalpages');
+    var currentpage = $(this).attr('data-pg');
+    var next = parseInt($(this).attr('data-pg')) + 1;
+    $('.news-feeds').load('<?php echo get_permalink() ?>?pg='+next+" .news-feeds .wrapper",function(){
+      $('#load-more').attr('data-pg',next);
+      if(next==total_pages) {
+        $('#load-more').remove();
+        $('.moreposts').html('<b>No more post to load</b>');
+      }
+    });
+  });
+});
+</script>
 <?php
 get_footer();
