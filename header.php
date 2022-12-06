@@ -46,7 +46,7 @@ if($is_page_title_visible) {
 } else {
   $extraClass = 'no-page-title';
 }
-if($page_title_visibility) 
+
 $headerButton = get_field('header_cta_button','option');
 $hBtnLink = (isset($headerButton['url']) && $headerButton['url']) ? $headerButton['url'] : '';
 $hBtnTitle = (isset($headerButton['title']) && $headerButton['title']) ? $headerButton['title'] : '';
