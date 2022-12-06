@@ -1646,6 +1646,8 @@ ul.contact-info li.email:before{content:""}
 #moreArticlesList .loadmore a{display:inline-block;text-decoration:underline;color:#b59473;font-size:13px;font-weight:600}
 #moreArticlesList a:hover{color:#d3bfab}
 #moreArticlesList .itemLink a:hover{color:#7eb2dd}
+#moreArticlesList .author a{color:#b59473;text-decoration:none}
+#moreArticlesList .author a:hover{color:#d3bfab}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}
