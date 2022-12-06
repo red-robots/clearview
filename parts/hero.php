@@ -67,6 +67,14 @@
   $banner_image = get_field('banner_image');
   $banner_title = get_field('banner_title');
   $banner_text = get_field('banner_text');
+
+  $news_page_id = 18;
+  if( is_single() & get_post_type()=='post' ) {
+    $banner_image = get_field('banner_image',$news_page_id);
+    $banner_title = get_field('banner_title',$news_page_id);
+    $banner_text = get_field('banner_text',$news_page_id);
+  }
+
   if($banner_image) { ?>
   <div id="subpage-banner">
     <div class="banner-image" style="background-image:url('<?php echo $banner_image['url'] ?>')"></div>

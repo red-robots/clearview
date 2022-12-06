@@ -1375,18 +1375,18 @@ body.logged-in.admin-bar {
   }
 }
 
+body.single-post,
 body.page-template-page-new {
   #subpage-banner {
     height: 350px;
   }
 }
-
-// body.subpage {
-//   #content, .site-footer {
-//     width: 100%;
-//     float: left;
-//   }
-// }
+body.single-post {
+  #main {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
 #content .entry-content p:empty {display:none;}
 
 .entry-content.fullwidth {
@@ -1760,6 +1760,55 @@ body.page-template-page-fullwidth {
   }
 }
 
+.single-top-area {
+  @include flexgroup();
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include tab {
+    margin-bottom: 20px;
+  }
+  figure {
+    margin: 0 0;
+    width: 100%;
+    @include tab {
+      width: 55%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .more-articles {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    @include tab {
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 40%;
+    }
+    h4 {
+      font-family: $font_primary!important;
+      font-size: 15px;
+      margin: 0 0;
+      display: block;
+      padding: 8px 15px;
+      color: #FFF;
+      background: $primary;
+    }
+  }
+  .author {
+    width: 100%;
+    margin: 0 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $secondary;
+  }
+}
+
 .column-map {
   #map {
     background: #F0F3F4;
@@ -1880,6 +1929,45 @@ ul.contact-info {
           background: $primary;
         }
       }
+    }
+  }
+}
+
+#moreArticlesList {
+  ul {
+    margin: 0 0;
+    padding: 20px 0;
+    list-style: none;
+  }
+  li {
+    position: relative;
+    font-size: 13px;
+    margin: 0 0 15px;
+  }
+  .author {
+    margin: 0 0 3px;
+  }
+  .posttitle {
+    color: $primary;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .loadmore {
+    a {
+      display: inline-block;
+      text-decoration: underline;
+      color: $secondary;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+  a:hover {
+    color: tint($secondary,40%);
+  }
+  .itemLink {
+    a:hover {
+      color: $light_blue;
     }
   }
 }

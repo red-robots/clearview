@@ -1548,7 +1548,8 @@ body.logged-in.admin-bar.mobile-menu-open #site-logo{width:135px;top:-7px;right:
 #subpage-banner .banner-text{width:100%;height:100%;position:absolute;top:0;left:0;z-index:5;padding:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 #subpage-banner .banner-inner{max-width:700px;width:100%;background:rgba(61,85,136,.96);color:#fff;padding:40px 30px 40px 7vw}
 #subpage-banner .banner-inner .title{font-size:2rem;line-height:1.2;margin:0 0 15px;border-bottom:1px solid #b59473}
-body.page-template-page-new #subpage-banner{height:350px}
+body.single-post #subpage-banner,body.page-template-page-new #subpage-banner{height:350px}
+body.single-post #main{padding-top:70px;padding-bottom:70px}
 #content .entry-content p:empty{display:none}
 .entry-content.fullwidth{max-width:100%;width:100%;padding-left:0;padding-right:0}
 .about-content .entry-content.fullwidth{margin-bottom:0}
@@ -1609,6 +1610,12 @@ body.page-template-page-fullwidth .secondary-template .entry-content{padding-lef
 .moreposts{margin-top:30px;text-align:center}
 .moreposts .blue-button:hover{color:#fff !important;background:#307ab8 !important}
 .moreposts b{font-weight:normal;font-size:13px;color:#a8a8a8}
+.single-top-area{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:0;padding-left:15px;padding-right:15px}
+.single-top-area figure{margin:0;width:100%}
+.single-top-area figure img{width:100%;height:auto}
+.single-top-area .more-articles{width:100%;margin-top:30px;margin-bottom:20px}
+.single-top-area .more-articles h4{font-family:"Roboto Flex",sans-serif !important;font-size:15px;margin:0;display:block;padding:8px 15px;color:#fff;background:#3d5588}
+.single-top-area .author{width:100%;margin:0;font-size:11px;font-weight:500;line-height:1.2;color:#b59473}
 .column-map #map{background:#f0f3f4;border:4px solid #fff;width:100%}
 .column-map iframe{width:100% !important}
 ul.contact-info{margin:0;padding:0;list-style:none}
@@ -1632,6 +1639,13 @@ ul.contact-info li.email:before{content:""}
 .column-form .gform_wrapper.gravity-theme br{display:none !important}
 .column-form .gform_wrapper.gravity-theme .gform_footer .gform_button.button{-webkit-appearance:none;border:1px solid #7eb2dd;border-radius:0;padding:7px 35px;background:#7eb2dd;color:#fff}
 .column-form .gform_wrapper.gravity-theme .gform_footer .gform_button.button:hover{border-color:#3d5588;background:#3d5588}
+#moreArticlesList ul{margin:0;padding:20px 0;list-style:none}
+#moreArticlesList li{position:relative;font-size:13px;margin:0 0 15px}
+#moreArticlesList .author{margin:0 0 3px}
+#moreArticlesList .posttitle{color:#3d5588;font-size:14px;font-weight:500;text-decoration:none}
+#moreArticlesList .loadmore a{display:inline-block;text-decoration:underline;color:#b59473;font-size:13px;font-weight:600}
+#moreArticlesList a:hover{color:#d3bfab}
+#moreArticlesList .itemLink a:hover{color:#7eb2dd}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}
@@ -1677,6 +1691,9 @@ body.subpage .site-header{-webkit-box-shadow:0 2px 10px rgba(0,0,0,.05);box-shad
 .news-feeds .post-item{width:25%}
 .news-feeds .post-item .textcol{padding-bottom:50px}
 .news-feeds .post-item div.button{position:absolute;left:0;bottom:15px;width:100%;padding:0 15px;margin-top:0}
+.single-top-area{margin-bottom:20px}
+.single-top-area figure{width:55%}
+.single-top-area .more-articles{margin-top:0;margin-bottom:0;width:40%}
 }@media(min-width:960px){.site-header .wrapper{max-width:100%;padding-left:12vw;padding-right:0}
 #site-navigation .head-cta-button{margin-left:25px}
 .team-wrapper .team .infocol.photo{width:30%}

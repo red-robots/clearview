@@ -43,9 +43,8 @@ get_header(); ?>
                 $stylebg = ($featImage) ? ' style="background-image:url('.$featImage[0].')"':'';
                 $term = get_the_terms($id,'category');
                 $termName = (isset($term) && $term[0] ) ? $term[0]->name:'';
-                $post_date = get_the_date('n/j/y');
-                //$post_date = get_the_date('m/d/y');
                 $termLink = ($term) ? get_term_link($term[0],'category') : '';
+                $post_date = get_the_date('n/j/y');
 
                 ?>
                 <article id="post-id-<?php echo $id ?>" class="post-item animated fadeIn <?php echo ($featImage) ? 'has-image':'no-image' ?>">

@@ -595,6 +595,64 @@ function display_team_func( $atts ) {
   return  $output;
 }
 
+/* REST API 
+ * URL=> https://clearview.test/wp-json/wp/v2/more-articles?perpage=10
+*/
+add_action( 'rest_api_init', function () {
+  // register a new endpoint
+  register_rest_route( 'wp/v2', '/more-articles/', array(
+    'methods' => 'GET',
+    'callback' => 'more_articles_func', // that calls this function
+  ) );
+} );
+
+function more_articles_func( WP_REST_Request $request ) {
+  $perpage = ($request->get_param( 'perpage' )) ? $request->get_param( 'perpage' ) : 4;
+  $post_type = ($request->get_param( 'posttype' )) ? $request->get_param( 'posttype' ) : 'post';
+  $paged = ($request->get_param( 'pg' )) ? $request->get_param( 'pg' ) : 4;
+  $args = array(
+    'posts_per_page'=> $perpage,
+    'post_type'   => $post_type,
+    'post_status' => 'publish',
+    'orderby'   => 'date',
+    'order'     => 'DESC',
+    'paged'     => $paged
+  );
+  $respond = array();
+  $entries = new WP_Query($args);
+
+  if( $entries->have_posts() ) {
+    $totalpost = $entries->found_posts;
+    $total_pages = $entries->max_num_pages;
+
+    while ( $entries->have_posts() ) { $entries->the_post(); 
+      $id = get_the_ID();
+      $term = get_the_terms($id,'category');
+      $termID = (isset($term) && $term[0] ) ? $term[0]->term_id:'';
+      $termName = (isset($term) && $term[0] ) ? $term[0]->name:'';
+      $termLink = ($term) ? get_term_link($term[0],'category') : '';
+
+      $arg['ID'] = $id;
+      $arg['post_title'] = get_the_title();
+      $arg['permalink'] = get_permalink($id);
+      if($term) {
+        $arg['term']['term_id'] = $termID;
+        $arg['term']['name'] = $termName;
+        $arg['term']['postdate'] = $termName;
+        $arg['term']['link'] = $termLink;
+      } else {
+        $arg['term'] = null;
+      }
+      $list[] = $arg;
+    }
+
+    $respond['total_records'] = $totalpost;
+    $respond['total_pages'] = $total_pages;
+    $respond['posts'] = $list;
+  }
+
+  return $respond;
+}
 
 
 
