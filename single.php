@@ -70,7 +70,7 @@ jQuery(document).ready(function($){
           item += "<li>";
             item += "<div class='breadcrumb'>";
             if(termName) {
-              item += "<div class='author'>"+termName+"' | '" + termDate + "</div>";
+              item += "<div class='author'>"+termName+" | " + termDate + "</div>";
             } else {
               item += "<div class='author'>" + termDate + "</div>";
             }
