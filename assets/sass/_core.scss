@@ -872,6 +872,16 @@ body.subpage {
   div.wp-block-buttons {
     argin-top: 45px!important;
   }
+
+  &.single-post {
+    .entry-content .page-title {
+      color: $primary;
+      margin: 0 0 10px;
+      font-size: 30px;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+  }
 }
 
 .wp-block-button.button {
@@ -1978,6 +1988,8 @@ ul.contact-info {
     }
   }
 }
+
+
 
 /* SOCIAL MEDIA */
 .shared-counts-wrap.after_content {
