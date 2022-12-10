@@ -51,46 +51,96 @@ get_header(); ?>
 <?php if( get_post_type()=='post' ) { ?>
 <script>
 jQuery(document).ready(function($){
-
-  var actionURL = '<?php echo get_site_url() ?>/wp-json/wp/v2/more-articles?perpage=6&pg=1';
-  $.get(actionURL,function(response){
-    
+  var showAtMost = 5;
+  var actionURL = '<?php echo get_site_url() ?>/wp-json/wp/v2/more-articles?perpage='+showAtMost;
+  $.get(actionURL + '&pg=1',function(response){
     if(response) {
       var posts = response['posts'];
       if(posts.length) {
         var item = "<ul>";
-
-        $(posts).each(function(k,v){
-          var term = v.term;
-          var termName = (term) ? term.name : '';
-          var termDate = (term) ? '<?php echo get_the_date('m/d/Y') ?>' : '';
-          if(termName=="Uncategorized") {
-            termName = "";
-          }
-          item += "<li>";
-            item += "<div class='breadcrumb'>";
-            if(termName) {
-              item += "<div class='author'><a href='"+term.link+"'>"+termName+"</a> | " + termDate + "</div>";
-            } else {
-              item += "<div class='author'>" + termDate + "</div>";
-            }
-            
-            item += "</div>";
-            item += "<div class='itemLink'><a href='"+v.permalink+"' class='posttitle'>"+v.post_title+"</a></div>";
-          item += "</li>";
-        });
-
-        
+        item += getArticleList(posts);
+        item += "</ul>";
         if(response['total_pages']) {
-          item += "<div class='loadmore'><a href='javascript:void(0)'>Load More</a></div>";
+          item += "<div class='loadmore'><a href='javascript:void(0)' data-reset='' data-records='"+response['total_records']+"' data-totalpages='"+response['total_pages']+"' data-next='1'>Load More</a></div>";
         }
+
       }
-
-      item += "</ul>";
-
       $('#moreArticlesList').html(item);
     }
   });
+
+  $(document).on('click','.loadmore a',function(){
+    var target = $(this);
+    var nextpage = $(this).attr('data-next');
+    var reset = $(this).attr('data-reset');
+    var total_pages = target.attr('data-totalpages');
+    var next = parseInt(nextpage) + 1;
+    if(reset) {
+      next = 1;
+    } 
+    var params = {
+      'posttype':'post',
+      'perpage':showAtMost,
+      'pg':next
+    };
+    console.log(next);
+    $.ajax({
+      type: "GET",
+      url: actionURL,
+      dataType:"json",
+      data: params,
+      beforeSend:function(){
+        // var listHeight = $('#moreArticlesList ul').height() + 30;
+        // $('#moreArticlesList ul').css('height',listHeight+'px');
+      },
+      success: function(response){
+        target.attr('data-next',next);
+        if(response) {
+          var posts = response['posts'];
+          var total_pages = response['total_pages'];
+          if(posts.length) {
+            var item = '<ul>';
+            item += getArticleList(posts);
+            item += '</ul>';
+            if(next<total_pages) {
+              item += "<div class='loadmore'><a href='javascript:void(0)' data-reset='' data-records='"+response['total_records']+"' data-totalpages='"+response['total_pages']+"' data-next='"+next+"'>Load More</a></div>";
+            } else {
+              // item += "<div class='loadmore'><a href='javascript:void(0)' data-reset='1' data-records='"+response['total_records']+"' data-totalpages='"+response['total_pages']+"' data-next='1'>Reset</a></div>";
+            }
+          }
+          $('#moreArticlesList').html(item);
+          //$('#moreArticlesList ul').append(item);
+        }
+      }
+    });
+        
+  });
+
+  function getArticleList(posts) {
+    var item = '';
+    if(posts.length) {
+      $(posts).each(function(k,v){
+        var term = v.term;
+        var termName = (term) ? term.name : '';
+        var termDate = (term) ? '<?php echo get_the_date('m/d/Y') ?>' : '';
+        if(termName=="Uncategorized") {
+          termName = "";
+        }
+        item += "<li>";
+          item += "<div class='breadcrumb'>";
+          if(termName) {
+            item += "<div class='author'><a href='"+term.link+"'>"+termName+"</a> | " + termDate + "</div>";
+          } else {
+            item += "<div class='author'>" + termDate + "</div>";
+          }
+          
+          item += "</div>";
+          item += "<div class='itemLink'><a href='"+v.permalink+"' class='posttitle'>"+v.post_title+"</a></div>";
+        item += "</li>";
+      });
+    }
+    return item;
+  }
 
 
 });

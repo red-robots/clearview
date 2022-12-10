@@ -1639,8 +1639,8 @@ ul.contact-info li.email:before{content:""}
 .column-form .gform_wrapper.gravity-theme br{display:none !important}
 .column-form .gform_wrapper.gravity-theme .gform_footer .gform_button.button{-webkit-appearance:none;border:1px solid #7eb2dd;border-radius:0;padding:7px 35px;background:#7eb2dd;color:#fff}
 .column-form .gform_wrapper.gravity-theme .gform_footer .gform_button.button:hover{border-color:#3d5588;background:#3d5588}
-#moreArticlesList ul{margin:0;padding:20px 0;list-style:none}
-#moreArticlesList li{position:relative;font-size:13px;margin:0 0 15px}
+#moreArticlesList ul{margin:0;padding:20px 0 0;list-style:none}
+#moreArticlesList li{position:relative;font-size:13px;margin:0 0 20px}
 #moreArticlesList .author{margin:0 0 3px}
 #moreArticlesList .posttitle{color:#3d5588;font-size:14px;font-weight:500;text-decoration:none}
 #moreArticlesList .loadmore a{display:inline-block;text-decoration:underline;color:#b59473;font-size:13px;font-weight:600}
@@ -1648,6 +1648,12 @@ ul.contact-info li.email:before{content:""}
 #moreArticlesList .itemLink a:hover{color:#7eb2dd}
 #moreArticlesList .author a{color:#b59473;text-decoration:none}
 #moreArticlesList .author a:hover{color:#d3bfab}
+.shared-counts-wrap.after_content{position:relative;margin-top:30px}
+.shared-counts-wrap.after_content:before{content:"Share";display:inline-block;color:#b59473;font-size:13px;font-weight:bold;position:relative;top:-10px;margin-right:10px}
+.shared-counts-wrap.after_content.style-slim a{display:inline-block;width:30px;height:30px;border-radius:100px !important;position:relative}
+.shared-counts-wrap.after_content.style-slim a span.shared-counts-icon-label{display:block;width:100%;height:100%;text-align:center;position:absolute;top:0;left:0}
+.shared-counts-wrap.after_content.style-slim a span.shared-counts-icon-label .shared-counts-icon{position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);margin:0 auto;width:100%;text-align:center}
+.shared-counts-wrap.after_content.style-slim a span.shared-counts-label{display:none !important}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}

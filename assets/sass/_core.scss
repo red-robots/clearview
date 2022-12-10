@@ -1936,13 +1936,13 @@ ul.contact-info {
 #moreArticlesList {
   ul {
     margin: 0 0;
-    padding: 20px 0;
+    padding: 20px 0 0;
     list-style: none;
   }
   li {
     position: relative;
     font-size: 13px;
-    margin: 0 0 15px;
+    margin: 0 0 20px;
   }
   .author {
     margin: 0 0 3px;
@@ -1978,6 +1978,53 @@ ul.contact-info {
     }
   }
 }
+
+/* SOCIAL MEDIA */
+.shared-counts-wrap.after_content {
+  position: relative;
+  margin-top: 30px;
+  &:before {
+    content: "Share";
+    display: inline-block;
+    color: $secondary;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    top: -10px;
+    margin-right: 10px;
+  }
+  &.style-slim {
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 100px!important;
+      position: relative;
+      span.shared-counts-icon-label {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        .shared-counts-icon {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          margin: 0 auto;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      span.shared-counts-label {
+        display: none!important;
+      }
+    }
+  }
+}
+
 
 /* FOOTER */
 .site-footer {

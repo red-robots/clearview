@@ -604,7 +604,7 @@ add_action( 'rest_api_init', function () {
     'methods' => 'GET',
     'callback' => 'more_articles_func', // that calls this function
   ) );
-} );
+});
 
 function more_articles_func( WP_REST_Request $request ) {
   $perpage = ($request->get_param( 'perpage' )) ? $request->get_param( 'perpage' ) : 4;
