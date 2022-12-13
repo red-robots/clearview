@@ -1473,7 +1473,7 @@ h6{font-size:1.2rem}
 .button-blue .wp-block-button__link,.button-blue .wp-element-button{display:inline-block;text-decoration:none;background:#7eb2dd;padding:15px 20px;color:#fff;font-size:15px;line-height:1.1;margin:0 15px;position:absolute;bottom:-20px}
 .button-blue .wp-block-button__link:hover,.button-blue .wp-element-button:hover{background:#9ec5e6}
 body.subpage{font-size:1em;line-height:1.4}
-body.subpage .entry-content h2{color:#b59473;font-size:20px;font-style:normal;font-weight:400}
+body.subpage .entry-content h2{color:#b59473;font-size:30px;font-style:normal;font-weight:400}
 body.subpage .entry-content h2 span{display:inline-block;border-bottom:1px solid #b59473}
 body.subpage .entry-content .section-blue{text-align:center;font-size:1.25em;line-height:1.4}
 body.subpage .entry-content .section-blue h2.has-text-align-center{font-size:2.5rem;font-weight:normal;display:inline-block;position:relative;border-bottom:1px solid #b59473}
