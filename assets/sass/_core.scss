@@ -1106,6 +1106,8 @@ body.subpage {
         color: $secondary;
         font-size: 13px;
         font-weight: bold;
+        padding-left: 0;
+        padding-right: 20px;
         &:after {
           content: "";
           display: inline-block;
