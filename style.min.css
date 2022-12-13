@@ -1667,6 +1667,11 @@ body.subpage .default-template .twocol .textcol{padding-left:0}
 body.subpage .default-template .twocol:nth-child(even){background:#f5f0ec}
 body.subpage .default-template .blue-pattern h2{font-size:25px;font-weight:normal;line-height:1.2;margin:0 0 15px}
 body.subpage .default-template .blue-pattern h2 strong{font-weight:normal;display:inline-block;border-bottom:1px solid #b59473}
+.page404{padding-top:80px;padding-bottom:80px}
+.page404 h1.page-title{margin-top:0;margin-bottom:8px}
+.page404 .content404 .innerText{padding:0 15px}
+#sitemap a{text-decoration:none;color:#3d5588}
+#sitemap a:hover{color:#b59473}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}

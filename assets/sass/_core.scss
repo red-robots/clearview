@@ -2152,6 +2152,30 @@ body.subpage .default-template {
   }
 }
 
+.page404 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  h1.page-title {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .content404 {
+    .innerText {
+      padding: 0 15px;
+    }
+  }
+}
+
+#sitemap {
+  a {
+    text-decoration: none;
+    color: $primary;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
 
 /* FOOTER */
 .site-footer {
