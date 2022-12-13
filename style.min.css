@@ -1513,11 +1513,15 @@ body.subpage.single-post .entry-content .page-title{color:#3d5588;margin:0 0 10p
 .homerow4 .column-left p{font-size:16px;line-height:1.4;text-align:left}
 .homerow4 .column-right{margin:0 -20px;background-size:cover;background-repeat:no-repeat;background-position:center}
 .homerow4 .column-right img{visibility:hidden}
-.homerow4 .service{text-align:left;position:relative;padding:0 15px}
+.homerow4 .service{text-align:left;position:relative;padding:0 15px;border:1px solid #b59473}
 .homerow4 .service:before,.homerow4 .service:after{content:"";display:block;width:1px;height:20px;background:#b59473;position:absolute;top:-27px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
 .homerow4 .service:after{-webkit-transform:translateY(10px) translateY(-50%) rotate(90deg);transform:translateY(10px) translateY(-50%) rotate(90deg)}
 .homerow4 .service h3.has-medium-font-size,.homerow4 .service h3{font-family:"Roboto Flex",sans-serif !important;font-size:1.4rem !important;font-weight:300 !important;margin:0 0 10px !important;text-align:left}
-.homerow4 .service .wp-block-group{border:1px solid #b59473;padding:20px;height:100%}
+.homerow4 .service .wp-block-group{padding:20px}
+.homerow4 .service .nofill .wp-element-button{text-decoration:none;display:inline-block;background-color:rgba(0,0,0,0);position:relative;color:#b59473;font-size:13px;font-weight:bold}
+.homerow4 .service .nofill .wp-element-button:after{content:"";display:inline-block;width:10px;height:10px;border-top:2px solid #b59473;border-right:2px solid #b59473;position:absolute;top:15px;right:5px;-webkit-transform:scale(0.7) rotate(45deg);transform:scale(0.7) rotate(45deg);-webkit-transition:all ease .3s;transition:all ease .3s}
+.homerow4 .service .nofill .wp-element-button:hover{color:#c4a98f}
+.homerow4 .service .nofill .wp-element-button:hover:after{border-top-color:#c4a98f;border-right-color:#c4a98f;right:3px}
 .homerow4 .service:first-child:before,.homerow4 .service:first-child:after{display:none}
 .homerow5 .inner{position:relative}
 .homerow5 .wp-block-columns.steps{counter-reset:section}
@@ -1721,7 +1725,7 @@ body.subpage .default-template .blue-pattern h2{font-size:35px}
 #site-navigation .head-cta-button{margin-left:25px}
 .team-wrapper .team .infocol.photo{width:30%}
 .team-wrapper .team .infocol.details{width:70%;padding:8vw 10vw}
-}@media screen and (min-width:960px){.bordered-columns{margin:0 -15px !important}
+}@media screen and (min-width:960px){.bordered-columns{margin:0 auto !important}
 }@media(min-width:1200px){.homerow4 .column-left{padding-left:15vw;padding-right:5vw}
 .homerow4 .service:before,.homerow4 .service:after{top:50%;left:-18px;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}
 .homerow4 .service:after{-webkit-transform:translateY(-8%) translateY(-50%) rotate(90deg);transform:translateY(-8%) translateY(-50%) rotate(90deg)}

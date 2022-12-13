@@ -5,11 +5,12 @@ h1,h2,h3,h4,h5,h6 {
   line-height: 1.2!important;
 }
 .wp-block-column h1 {font-size: 3.3rem;}
-.wp-block-column h2 {font-size: 2.5rem;}
-.wp-block-column h3 {font-size: 2rem;}
-.wp-block-column h4 {font-size: 1.8rem;}
-.wp-block-column h5 {font-size: 1.5rem;}
-.wp-block-column h6 {font-size: 1.2rem;}
+.wp-block-column h2 {font-size: 2rem;}
+.wp-block-column h3 {font-size: 1.8rem;}
+.wp-block-column h4 {font-size: 1.5rem;}
+.wp-block-column h5 {font-size: 1.3rem;}
+.wp-block-column h6 {font-size: 1rem;}
+.edit-post-visual-editor .editor-styles-wrapper p { line-height: 1.5; }
 
 /* Main column width */
 .wp-block {

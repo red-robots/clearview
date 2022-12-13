@@ -1054,6 +1054,7 @@ body.subpage {
     text-align: left;
     position: relative;
     padding: 0 15px;
+    border: 1px solid $secondary;
     @include tab {
       padding: 15px;
     }
@@ -1092,9 +1093,41 @@ body.subpage {
       text-align: left;
     }
     .wp-block-group {
-      border: 1px solid $secondary;
+      // border: 1px solid $secondary;
       padding: 20px;
-      height: 100%;
+      // height: 100%;
+    }
+    .nofill {
+      .wp-element-button {
+        text-decoration: none;
+        display: inline-block;
+        background-color: transparent;
+        position: relative;
+        color: $secondary;
+        font-size: 13px;
+        font-weight: bold;
+        &:after {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-top: 2px solid $secondary;
+          border-right: 2px solid $secondary;
+          position: absolute;
+          top: 15px;
+          right: 5px;
+          transform: scale(0.7) rotate(45deg);
+          transition: all ease .3s;
+        }
+        &:hover {
+          color: tint($secondary,20%);
+          &:after {
+            border-top-color: tint($secondary,20%);
+            border-right-color: tint($secondary,20%);
+            right: 3px;
+          }
+        }
+      }
     }
     @include max( $midwidth ) {
       h3.has-medium-font-size, h3 {font-size: 1.2rem!important;}
@@ -1172,7 +1205,7 @@ body.subpage {
   padding-right: 0!important;
   margin: 0 auto!important;
   @include min( $midwidth ) {
-    margin: 0 -15px!important;
+    margin: 0 auto!important;
   }
 }
 
