@@ -1429,9 +1429,9 @@ h6{font-size:1.2rem}
 #site-navigation ul.menu>li{float:left;position:relative;margin-left:10px}
 #site-navigation ul.menu>li>a{font-size:15px;font-weight:500;padding:5px 15px;position:relative;z-index:1000;border:1px solid rgba(0,0,0,0)}
 #site-navigation ul.menu>li.current_page_item>a,#site-navigation ul.menu>li:hover>a{border-color:#b59473}
-#site-navigation ul.menu ul{display:block;width:250px;background:#3d5588;margin:0;padding:0;list-style:none;position:absolute;left:0;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;z-index:-999}
+#site-navigation ul.menu ul{display:block;width:250px;background:rgba(181,148,115,.95);margin:0;padding:0;list-style:none;position:absolute;left:0;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;z-index:-999}
 #site-navigation ul.menu ul a{display:block;padding:5px 20px;color:#fff}
-#site-navigation ul.menu ul li.current_page_item>a,#site-navigation ul.menu ul>li:hover>a{color:#3d5588}
+#site-navigation ul.menu ul li.current_page_item>a,#site-navigation ul.menu ul>li:hover>a{opacity:.5}
 #site-navigation ul.menu li.menu-item-has-children:hover>ul{display:block;padding-top:10px;padding-bottom:10px;-webkit-transform:translateY(0);transform:translateY(0);opacity:1;z-index:9999}
 .mobile-menu{display:none}
 .wp-block-columns{max-width:1300px;width:100%;margin:0 auto;padding-left:15px;padding-right:15px}
@@ -1479,8 +1479,8 @@ body.subpage .entry-content .section-blue{text-align:center;font-size:1.25em;lin
 body.subpage .entry-content .section-blue h2.has-text-align-center{font-size:2.5rem;font-weight:normal;display:inline-block;position:relative;border-bottom:1px solid #b59473}
 body.subpage .entry-content h2:first-child{font-weight:500;margin:0 0 15px}
 body.subpage .entry-content h2:first-child span{font-size:1.8rem !important}
-body.subpage.no-page-title #main{padding-top:75px}
-body.subpage div.wp-block-buttons{argin-top:45px !important}
+body.subpage.no-page-title #main{padding-top:0}
+body.subpage div.wp-block-buttons{margin-top:45px !important}
 body.subpage.single-post .entry-content .page-title{color:#3d5588;margin:0 0 10px;font-size:30px;font-weight:normal;line-height:1.2}
 .wp-block-button.button a{display:inline-block;text-decoration:none;background:#7eb2dd;padding:15px 20px;color:#fff;font-size:15px;line-height:1.1;margin:0 15px}
 .wp-block-button.button a:hover{background:#9ec5e6}
@@ -1547,7 +1547,7 @@ body.logged-in.admin-bar.mobile-menu-open #site-logo{width:135px;top:-7px;right:
 #subpage-banner{width:100%;height:70vh;position:relative}
 #subpage-banner .banner-image{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#ccc;width:100%;height:100%;position:absolute;top:0;left:0}
 #subpage-banner .banner-text{width:100%;height:100%;position:absolute;top:0;left:0;z-index:5;padding:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-#subpage-banner .banner-inner{max-width:700px;width:100%;background:rgba(61,85,136,.96);color:#fff;padding:40px 30px 40px 7vw}
+#subpage-banner .banner-inner{max-width:775px;width:100%;background:rgba(61,85,136,.96);color:#fff;padding:40px 30px 48px 12vw}
 #subpage-banner .banner-inner .title{font-size:2rem;line-height:1.2;margin:0 0 15px;border-bottom:1px solid #b59473}
 body.single-post #subpage-banner,body.page-template-page-new #subpage-banner{height:350px}
 body.single-post #main{padding-top:70px;padding-bottom:70px}
@@ -1655,6 +1655,14 @@ ul.contact-info li.email:before{content:""}
 .shared-counts-wrap.after_content.style-slim a span.shared-counts-icon-label{display:block;width:100%;height:100%;text-align:center;position:absolute;top:0;left:0}
 .shared-counts-wrap.after_content.style-slim a span.shared-counts-icon-label .shared-counts-icon{position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);margin:0 auto;width:100%;text-align:center}
 .shared-counts-wrap.after_content.style-slim a span.shared-counts-label{display:none !important}
+body.subpage .default-template .entry-content{max-width:100%;width:100%;padding-left:0;padding-right:0;padding-bottom:0;margin-bottom:0}
+body.subpage .default-template .twocol{padding-top:80px;padding-bottom:80px;position:relative}
+body.subpage .default-template .twocol .wp-block-group__inner-container{position:relative;z-index:10}
+body.subpage .default-template .twocol h2{font-size:25px;font-weight:normal;line-height:1.2;margin:0 0 15px;padding-bottom:5px;border-bottom:1px solid #b59473}
+body.subpage .default-template .twocol .textcol{padding-left:0}
+body.subpage .default-template .twocol:nth-child(even){background:#f5f0ec}
+body.subpage .default-template .blue-pattern h2{font-size:25px;font-weight:normal;line-height:1.2;margin:0 0 15px}
+body.subpage .default-template .blue-pattern h2 strong{font-weight:normal;display:inline-block;border-bottom:1px solid #b59473}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}
@@ -1703,6 +1711,12 @@ body.subpage .site-header{-webkit-box-shadow:0 2px 10px rgba(0,0,0,.05);box-shad
 .single-top-area{margin-bottom:20px}
 .single-top-area figure{width:55%}
 .single-top-area .more-articles{margin-top:0;margin-bottom:0;width:40%}
+body.subpage .default-template .twocol h2{font-size:35px}
+body.subpage .default-template .twocol .textcol{padding-left:3vw}
+body.subpage .default-template .twocol:nth-child(even):after{content:"";display:block;width:20%;height:100%;position:absolute;top:0;right:0;background:#b59472}
+body.subpage .default-template .twocol:nth-child(even) .wp-block-columns{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+body.subpage .default-template .twocol:nth-child(even) .wp-block-columns .textcol{padding-left:0;padding-right:3vw}
+body.subpage .default-template .blue-pattern h2{font-size:35px}
 }@media(min-width:960px){.site-header .wrapper{max-width:100%;padding-left:12vw;padding-right:0}
 #site-navigation .head-cta-button{margin-left:25px}
 .team-wrapper .team .infocol.photo{width:30%}

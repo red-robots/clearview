@@ -354,7 +354,7 @@ h6 {font-size: 1.2rem;}
   ul.menu ul {
     display: block;
     width: 250px;
-    background: $primary;
+    background: rgba($secondary,95%);
     margin: 0 0;
     padding: 0 0;
     list-style: none;
@@ -372,7 +372,8 @@ h6 {font-size: 1.2rem;}
   }
   ul.menu ul li.current_page_item > a,
   ul.menu ul > li:hover > a {
-    color: $primary;
+    // color: $primary;
+    opacity: 0.5;
   }
   ul.menu li.menu-item-has-children:hover > ul {
     display: block;
@@ -866,11 +867,11 @@ body.subpage {
   }
   &.no-page-title {
     #main {
-      padding-top: 75px;
+      padding-top: 0;
     }
   }
   div.wp-block-buttons {
-    argin-top: 45px!important;
+    margin-top: 45px!important;
   }
 
   &.single-post {
@@ -1368,11 +1369,11 @@ body.logged-in.admin-bar {
     }
   }
   .banner-inner {
-    max-width: 700px;
+    max-width: 775px;
     width: 100%;
     background: rgba($primary, 0.96);
     color: #FFF;
-    padding: 40px 30px 40px 7vw;
+    padding: 40px 30px 48px 12vw;
     .title {
       font-size: 2rem;
       line-height: 1.2;
@@ -2032,6 +2033,85 @@ ul.contact-info {
       }
       span.shared-counts-label {
         display: none!important;
+      }
+    }
+  }
+}
+
+body.subpage .default-template {
+  .entry-content {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .twocol {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    .wp-block-group__inner-container {
+      position: relative;
+      z-index: 10;
+    }
+    h2 {
+      font-size: 25px;
+      font-weight: normal;
+      line-height: 1.2;
+      margin: 0 0 15px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $secondary;
+      @include tab {
+        font-size: 35px;
+      }
+    }
+    .textcol {
+      padding-left: 0;
+      @include tab {
+        padding-left: 3vw;
+      }
+    }
+  }
+  .twocol:nth-child(even) {
+    background: #F5F0EC;
+    @include tab {
+      &:after {
+        content:"";
+        display: block;
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $brown;
+      }
+    }
+
+    .wp-block-columns {
+      @include tab {
+        flex-direction: row-reverse;
+        .textcol {
+          padding-left: 0;
+          padding-right: 3vw;
+        }
+      }
+    }
+  }
+
+  .blue-pattern {
+    h2 {
+      font-size: 25px;
+      font-weight: normal;
+      line-height: 1.2;
+      margin: 0 0 15px;
+      @include tab {
+        font-size: 35px;
+      }
+      strong {
+        font-weight: normal;
+        display: inline-block;
+        border-bottom: 1px solid $secondary;
       }
     }
   }
