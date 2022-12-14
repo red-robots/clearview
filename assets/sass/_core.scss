@@ -2409,7 +2409,7 @@ body.subpage .default-template {
 @media screen and (max-width: 782px) {
   body.logged-in.admin-bar {
     #page {
-      padding-top: 85px;
+      padding-top: 0;
     }
   }
   html #wpadminbar {
