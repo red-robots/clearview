@@ -58,16 +58,34 @@ a {
 	}
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Lora', serif!important;
+  font-family: $font_secondary, serif!important;
   font-weight: 400;
   line-height: 1.2;
 }
-h1 {font-size: 3.3rem;}
-h2 {font-size: 2.5rem;}
-h3 {font-size: 2rem;}
-h4 {font-size: 1.8rem;}
-h5 {font-size: 1.5rem;}
-h6 {font-size: 1.2rem;}
+h1 {
+  font-size: 3rem;
+  @include tab {font-size: 3.3rem;}
+}
+h2 { 
+  font-size: 1.6rem;
+  @include tab {font-size: 2.5rem;}
+}
+h3 {
+  font-size: 1.2rem;
+  @include tab {font-size: 2rem;}
+}
+h4 {
+  font-size: 1.1rem;
+  @include tab {font-size: 1.8rem;}
+}
+h5 {
+  font-size: 1rem;
+  @include tab {font-size: 1.5rem;}
+}
+h6 {
+  font-size: 0.85rem;
+  @include tab {font-size: 1.2rem;}
+}
 .letter-space {letter-spacing:1px;}
 .cf:before, .cf:after {
     content: " "; 
@@ -119,7 +137,7 @@ h6 {font-size: 1.2rem;}
 /* Header */
 #site-logo {
   display: inline-block;
-  width: 250px;
+  width: 220px;
   transition: all ease .3s;
   a, img {
     display: block;
@@ -181,9 +199,18 @@ h6 {font-size: 1.2rem;}
   }
 }
 .slider {
-  height: 85vh;
+  height: 60vh;
+  padding-top: 85px;
+  @include xs {
+    padding-top: 0;
+    height: 85vh;
+  }
 }
-
+body.logged-in.admin-bar {
+  .slider {
+    padding-top: 0;
+  }
+}
 .swiper, .swiper-wrapper, .swiper-slide {
   height: 100%;
 }
@@ -199,11 +226,12 @@ h6 {font-size: 1.2rem;}
     position: absolute;
     top: 0;
     left: 0;
-    background: {
-      size: cover;
-      color: #545454;
-      repeat:no-repeat;
-      position: center;
+    background-size: cover;
+    background-color: #545454;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    @include tab {
+      background-position: center;
     }
     &:before {
       content: "";
@@ -218,6 +246,18 @@ h6 {font-size: 1.2rem;}
       background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
     }
+    &.desktop {
+      display: none;
+      @include tab {
+        display: block;
+      }
+    }
+    &.mobile {
+      display: block;
+      @include tab {
+        display: none;
+      }
+    }
   }
   .slide-text {
     color: #FFF;
@@ -226,14 +266,14 @@ h6 {font-size: 1.2rem;}
     bottom: 0;
     width: 100%;
     height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1em;
+    padding-right: 1em;
     @include tab {
       padding-left: 0;
       padding-right: 0;
     }
     .wrap {
-      max-width: $wrapper;
+      max-width: 1335px;
       width: 100%;
       height: 100%;
       margin: 0 auto;
@@ -243,23 +283,30 @@ h6 {font-size: 1.2rem;}
       .inline {
         max-width: 600px;
         width: 100%;
-        margin: 15px 0 0;
+        margin: 0 0 0;
         padding: 20px 20px 30px;
         background: $primary;
         position: relative;
+        transform: translateY(-1vh);
         @include tab {
+          margin: 15px 0 0;
+          transform: translateY(-4vh);
           padding: 2vw 2vw 2.3vw;
         }
       }
     }
     .slideHeading {
       font-family: $font_secondary;
-      font-size: 2.2em;
+      font-size: 1.4em;
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.3;
       margin:0 0 15px;
+      @include xs {
+        line-height: 1.2;
+        font-size: 2em;
+      }
       @include tab {
-        font-size: 3.3em;
+        font-size: 2.8em;
       }
     }
     .slideDetails {
@@ -871,7 +918,7 @@ body.subpage {
       padding-bottom: 80px;
       &.no-pad-topbottom {
         padding-top: 0;
-        padding-bottom: 0;
+        padding-bottom: 80px;
       }
     }
   }
@@ -917,17 +964,22 @@ body.subpage {
 /* HOME */
 .homerow1 {
   background-color: #B59473;
-  padding: 0 0 0 20vw;
+  padding: 0 0 0 0;
   // .wp-block-cover__image-background {
   //   width: calc(100% - 20vw);
   //   left: 20vw;
   // }
+  @include tab {
+    padding-left: 20vw;
+  }
   .textbox {
     padding: 30px;
     position: relative;
-    transform: translateX(-15vw);
     color: $color_text_main;
     box-shadow: 0 6px 6px rgba(0,0,0,0.1);
+    @include tab {
+      transform: translateX(-15vw);
+    }
     h2 {
       margin: 0 0 15px;
     }
@@ -936,26 +988,60 @@ body.subpage {
       box-shadow: 0 6px 6px rgba(0,0,0,0.1);
     }
   }
+  .wp-block-cover__inner-container {
+    .wp-block-columns {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
+
+.wp-block-cover, .wp-block-cover-image {
+  min-height: 35rem!important;
+  @include tab {
+    min-height: 40rem!important;
+  }
+}
+
+
 .homerow2 {
   position: relative;
   .wp-block-cover {
     padding: 0 0;
   }
   .column-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
+    position: relative;
+    width: 100%;
+    @include tab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+    }
     .wp-block-cover {
       height: 100%;
+    }
+    img {
+      @include max($tabwidth) {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .wp-block-cover.is-light {
+      @include max($tabwidth) {
+        min-height: unset!important;
+      }
     }
   }
   .column-right {
     padding: 0 0;
     .wp-block-group__inner-container {
-      padding: 10vw 5vw 11vw;
+      padding: 5vw 5vw 18vw;
+      @include tab {
+        padding: 10vw 5vw 11vw;
+      }
     }
     h2 {
       margin-top: 0;
@@ -1025,10 +1111,16 @@ body.subpage {
   .column-left {
     padding-left: 0;
     text-align: left;
-    padding-bottom: 100px;
-    padding-top: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    @include tab {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 50px;
+      padding-bottom: 100px;
+    }
     @include desk {
       padding-left: 15vw;
       padding-right: 5vw;
@@ -1151,6 +1243,21 @@ body.subpage {
   .inner {
     position: relative;
   }
+  .wp-block-spacer {
+    @include max($tabwidth) {
+      height: 50px!important;
+    }
+  }
+  .wp-block-cover img {
+    @include max($tabwidth) {
+      width: 240%;
+    }
+  }
+  @include max($tabwidth) {
+    .wp-block-columns {
+      padding: 0 5px!important;
+    }
+  }
   .wp-block-columns.steps {
     counter-reset: section;
     .step {
@@ -1158,7 +1265,11 @@ body.subpage {
       padding-left: 100px;
       h5 {
         font-family: $font_primary!important;
+        font-size: 1.2rem;
         margin: 0 0 5px;
+        @include tab {
+          font-size: 1.5rem;
+        }
       }
       p {
         font-size: 0.9em;
@@ -2180,7 +2291,6 @@ body.subpage .default-template {
     }
   }
 }
-
 
 /* FOOTER */
 .site-footer {

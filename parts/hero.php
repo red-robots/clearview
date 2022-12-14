@@ -9,12 +9,16 @@
           <?php foreach ($banners as $b) { ?>
             <?php if ($b['image']) { 
               $img = $b['image']; 
+              $imgMobile = $b['image_mobile']; 
               $slideTitle = $b['slide_title'];
               $slideText = $b['slide_text'];
               $buttons = $b['buttons'];
             ?>
             <div class="swiper-slide">
-              <div class="slide-image" style="background-image:url('<?php echo $img['url'] ?>')"></div>
+              <div class="slide-image desktop" style="background-image:url('<?php echo $img['url'] ?>')"></div>
+              <?php if ($imgMobile) { ?>
+              <div class="slide-image mobile" style="background-image:url('<?php echo $imgMobile['url'] ?>')"></div>
+              <?php } ?>
 
 
               <?php if ($slideTitle || $slideText) { ?>
