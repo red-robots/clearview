@@ -867,7 +867,12 @@ body.subpage {
   }
   &.no-page-title {
     #main {
-      padding-top: 0;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      &.no-pad-topbottom {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   }
   div.wp-block-buttons {

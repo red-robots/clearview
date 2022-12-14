@@ -24,6 +24,14 @@ jQuery(document).ready(function ($) {
   //     el: '.swiper-scrollbar',
   //   },
   // });
+  if ($('#main .twocol').length) {
+    var firstEl = $('#main .twocol').first().prev();
+
+    if (firstEl.length == 0) {
+      $('#main').addClass('no-pad-topbottom');
+    }
+  }
+
   $('#menutoggle').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('active');

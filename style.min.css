@@ -1479,7 +1479,8 @@ body.subpage .entry-content .section-blue{text-align:center;font-size:1.25em;lin
 body.subpage .entry-content .section-blue h2.has-text-align-center{font-size:2.5rem;font-weight:normal;display:inline-block;position:relative;border-bottom:1px solid #b59473}
 body.subpage .entry-content h2:first-child{font-weight:500;margin:0 0 15px}
 body.subpage .entry-content h2:first-child span{font-size:1.8rem !important}
-body.subpage.no-page-title #main{padding-top:0}
+body.subpage.no-page-title #main{padding-top:80px;padding-bottom:80px}
+body.subpage.no-page-title #main.no-pad-topbottom{padding-top:0;padding-bottom:0}
 body.subpage div.wp-block-buttons{margin-top:45px !important}
 body.subpage.single-post .entry-content .page-title{color:#3d5588;margin:0 0 10px;font-size:30px;font-weight:normal;line-height:1.2}
 .wp-block-button.button a{display:inline-block;text-decoration:none;background:#7eb2dd;padding:15px 20px;color:#fff;font-size:15px;line-height:1.1;margin:0 15px}
