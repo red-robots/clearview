@@ -205,6 +205,9 @@ h6 {
     padding-top: 0;
     height: 85vh;
   }
+  @include tab {
+    height: 87vh;
+  }
 }
 body.logged-in.admin-bar {
   .slider {
