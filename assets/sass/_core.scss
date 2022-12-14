@@ -137,8 +137,14 @@ h6 {
 /* Header */
 #site-logo {
   display: inline-block;
-  width: 220px;
+  width: 135px;
+  position: relative;
+  top: -5px;
   transition: all ease .3s;
+  @include mid {
+    top: 0;
+    width: 220px;
+  }
   a, img {
     display: block;
     width: 100%;
@@ -435,7 +441,7 @@ body.logged-in.admin-bar {
   }
 
   /* Mobile View */
-  @include max($tabwidth) {
+  @include max($midwidth) {
     display: block;
     position: fixed;
     top: 0;
@@ -570,7 +576,7 @@ body.logged-in.admin-bar {
 
 .mobile-menu {
   display: none;
-  @include max($tabwidth) {
+  @include max($midwidth) {
     cursor: pointer;
     display: block;
     width: 50px;
@@ -1500,8 +1506,13 @@ body.logged-in.admin-bar {
 
 #subpage-banner {
   width: 100%;
-  height: 70vh;
+  height: 65vh;
+  margin-top: 90px;
   position: relative;
+  @include xs {
+    margin-top: 0;
+    height: 70vh;
+  }
   @include tab {
     height: 500px;
   }
@@ -1533,12 +1544,18 @@ body.logged-in.admin-bar {
     width: 100%;
     background: rgba($primary, 0.96);
     color: #FFF;
-    padding: 40px 30px 48px 12vw;
+    padding: 20px 20px;
+    @include tab {
+      padding: 40px 30px 48px 12vw;
+    }
     .title {
-      font-size: 2rem;
+      font-size: 1.7rem;
       line-height: 1.2;
       margin: 0 0 15px;
       border-bottom: 1px solid $secondary;
+      @include xs {
+        font-size: 2.1rem;
+      }
       @include tab {
         font-size: 2.5rem;
       }
