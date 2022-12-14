@@ -1405,7 +1405,7 @@ h6{font-size:.85rem}
 .site-header{background:#fbfaf8;position:relative;z-index:100}
 .site-header .wrapper{padding-top:15px;padding-bottom:20px}
 .site-header .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
-.slider{height:60vh;padding-top:85px}
+.slider{height:65vh;padding-top:85px}
 body.logged-in.admin-bar .slider{padding-top:0}
 .swiper,.swiper-wrapper,.swiper-slide{height:100%}
 .slider{overflow:hidden}
@@ -1491,6 +1491,7 @@ body.subpage.single-post .entry-content .page-title{color:#3d5588;margin:0 0 10p
 .wp-block-button.button.drop-shadow a{-webkit-box-shadow:0 4px 5px rgba(0,0,0,.15);box-shadow:0 4px 5px rgba(0,0,0,.15)}
 .wp-block-button.button.drop-shadow a:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
 .homerow1{background-color:#b59473;padding:0}
+.homerow1 .wp-block-group__inner-container .wp-block-cover.alignfull{min-height:35rem !important}
 .homerow1 .textbox{padding:30px;position:relative;color:#31271d;-webkit-box-shadow:0 6px 6px rgba(0,0,0,.1);box-shadow:0 6px 6px rgba(0,0,0,.1)}
 .homerow1 .textbox h2{margin:0 0 15px}
 .homerow1 .textbox .button-blue .wp-block-button__link,.homerow1 .textbox .button-blue .wp-element-button{-webkit-box-shadow:0 6px 6px rgba(0,0,0,.1);box-shadow:0 6px 6px rgba(0,0,0,.1)}
@@ -1721,6 +1722,7 @@ h6{font-size:1.2rem}
 body.logged-in.admin-bar .site-header{top:0}
 body.subpage .site-header{-webkit-box-shadow:0 2px 10px rgba(0,0,0,.05);box-shadow:0 2px 10px rgba(0,0,0,.05)}
 .homerow1{padding-left:20vw}
+.homerow1 .wp-block-group__inner-container .wp-block-cover.alignfull{min-height:40rem !important}
 .homerow1 .textbox{-webkit-transform:translateX(-15vw);transform:translateX(-15vw)}
 .wp-block-cover,.wp-block-cover-image{min-height:40rem !important}
 .homerow2 .column-left{position:absolute;top:0;left:0;width:50%;height:100%}

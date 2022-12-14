@@ -199,7 +199,7 @@ h6 {
   }
 }
 .slider {
-  height: 60vh;
+  height: 65vh;
   padding-top: 85px;
   @include xs {
     padding-top: 0;
@@ -971,6 +971,12 @@ body.subpage {
   // }
   @include tab {
     padding-left: 20vw;
+  }
+  .wp-block-group__inner-container .wp-block-cover.alignfull {
+    min-height: 35rem!important;
+    @include tab {
+      min-height: 40rem!important;
+    }
   }
   .textbox {
     padding: 30px;
