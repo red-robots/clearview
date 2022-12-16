@@ -17,7 +17,7 @@ get_header(); ?>
     <header class="entry-title">
       <div class="wrapper">
         <div class="small-title">404 ERROR</div>
-        <h1 class="page-title"><?php esc_html_e( 'Page Not Found!', 'bellaworks' ); ?> <!-- <span class="smiley"> ¯\_(ツ)_/¯ </span> --></h1>
+        <h1 class="page-title"><span><?php esc_html_e( 'Page Not Found!', 'bellaworks' ); ?> <!-- <span class="smiley"> ¯\_(ツ)_/¯ </span> --></span></h1>
       </div>
     </header>
 

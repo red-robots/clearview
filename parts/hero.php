@@ -80,7 +80,7 @@
   }
 
   if($banner_image) { ?>
-  <div id="subpage-banner">
+  <div id="subpage-banner" class="subpage-banner">
     <div class="banner-image" style="background-image:url('<?php echo $banner_image['url'] ?>')"></div>
     <?php if ($banner_title || $banner_text) { ?>
     <div class="banner-text">

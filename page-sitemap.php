@@ -9,9 +9,7 @@ get_header(); ?>
   <main id="main" class="site-main wrapper">
     <?php while ( have_posts() ) : the_post(); ?>
       <header class="entry-title">
-        <div class="wrapper">
-          <h1 class="page-title"><?php the_title(); ?></h1>
-        </div>
+        <h1 class="page-title"><span><?php the_title(); ?></span></h1>
       </header>
       
       <?php if ( get_the_content() ) { ?>

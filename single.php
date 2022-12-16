@@ -17,7 +17,7 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php if( !get_post_type()=='post' ) { ?>
-				<h1 class="page-title"><?php the_title(); ?></h1>
+				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
 			<?php } ?>
 
 
@@ -40,7 +40,7 @@ get_header(); ?>
 
 			<div class="entry-content">
         <?php if( get_post_type()=='post' ) { ?>
-          <h1 class="page-title"><?php the_title(); ?></h1>
+          <h1 class="page-title"><span><?php the_title(); ?></span></h1>
         <?php } ?>
 				<?php the_content(); ?>
 			</div>

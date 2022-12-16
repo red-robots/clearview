@@ -937,11 +937,16 @@ body.subpage {
 
   &.single-post {
     .entry-content .page-title {
-      color: $primary;
-      margin: 0 0 10px;
+      color: $secondary;
+      margin: 0 0 15px;
       font-size: 30px;
       font-weight: normal;
       line-height: 1.2;
+      span {
+        display: inline-block;
+        border-bottom: 1px solid $secondary;
+        padding-bottom: 5px;
+      }
     }
   }
 }
@@ -1562,7 +1567,20 @@ body.logged-in.admin-bar {
     }
   }
 }
-
+body.page-template-page-news {
+  &.subpage.no-page-title #main {
+    padding-top: 20px;
+    @include tab {
+      padding-top: 50px;
+    }
+  }
+  #subpage-banner {
+    height: 150px;
+    @include tab {
+      height: 250px;
+    }
+  }
+}
 body.single-post,
 body.page-template-page-new {
   #subpage-banner {
@@ -1732,6 +1750,18 @@ body.single-post {
 
 .wp-block-group.text-icon {
   padding: 15px 0;
+  .wp-block-image {
+    transform: translateX(-10px);
+    opacity: 0;
+    transition: all ease .5s;
+  }
+  &.animated {
+    .wp-block-image {
+      transform: translateX(0);
+      opacity: 1;
+      transition-delay: 0.5s;
+    }
+  }
   .wp-block-columns {
     position: relative;
   }
@@ -1955,7 +1985,7 @@ body.page-template-page-fullwidth {
   padding-left: 15px;
   padding-right: 15px;
   @include tab {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   figure {
     margin: 0 0;
@@ -2258,6 +2288,13 @@ ul.contact-info {
 }
 
 body.subpage .default-template {
+  .page-title {
+    color: $secondary;
+    span {
+      display: inline-block;
+      border-bottom: 1px solid $secondary;
+    }
+  }
   .entry-content {
     max-width: 100%;
     width: 100%;
@@ -2346,16 +2383,74 @@ body.subpage .default-template {
   .content404 {
     .innerText {
       padding: 0 15px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
+  #sitemap-wrap {
+    margin-top: 50px;
+  }
+  .entry-title {
+    .small-title {
+      color: $secondary;
+      font-family: $font_secondary;
+      font-weight: 500;
+      letter-spacing: 3px;
     }
   }
 }
 
+.sitemap-page {
+  .page-title {
+    color: $secondary;
+    span {
+      border-bottom: 1px solid $secondary;
+    }
+  }
+}
+.sitemap-links {
+  margin-bottom: 100px;
+}
 #sitemap {
+  @include xs {
+    column-count: 2;
+  }
+  margin: 0 0;
+  padding: 0 0;
+  list-style: none;
+  li {
+    margin: 3px 0;
+    position: relative;
+  }
   a {
     text-decoration: none;
     color: $primary;
+    font-size: 18px;
+    line-height: 1.4;
+    position: relative;
     &:hover {
       color: $secondary;
+    }
+  }
+}
+#sitemap > li > a {
+  padding-left: 10px;
+  &:before {
+    content:"";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid $primary;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    transition: all ease .3s;
+  }
+  &:hover {
+    &:before {
+      border-left-color: $secondary;
     }
   }
 }
