@@ -1625,8 +1625,15 @@ body.page-template-page-fullwidth .secondary-template .entry-content{padding-lef
 .single-top-area{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:0;padding-left:15px;padding-right:15px}
 .single-top-area figure{margin:0;width:100%}
 .single-top-area figure img{width:100%;height:auto}
-.single-top-area .more-articles{width:100%;margin-top:30px;margin-bottom:20px}
+.single-top-area .more-articles{width:100%;margin-top:30px;margin-bottom:20px;position:relative}
 .single-top-area .more-articles h4{font-family:"Roboto Flex",sans-serif !important;font-size:15px;margin:0;display:block;padding:8px 15px;color:#fff;background:#3d5588}
+.single-top-area .more-articles #moreArticlesList{position:relative;overflow:hidden}
+.single-top-area .more-articles.expand #moreArticlesList ul{height:100%;overflow:auto;padding-bottom:20px}
+.single-top-area .more-articles.expand #moreArticlesList ::-webkit-scrollbar{width:10px}
+.single-top-area .more-articles.expand #moreArticlesList ::-webkit-scrollbar-track{background:#f1f1f1}
+.single-top-area .more-articles.expand #moreArticlesList ::-webkit-scrollbar-thumb{background:#888}
+.single-top-area .more-articles.expand #moreArticlesList ::-webkit-scrollbar-thumb:hover{background:#555}
+.single-top-area .more-articles.expand .loadmore{position:absolute;left:0;bottom:0;width:100%;background:#fbfaf8;z-index:20}
 .single-top-area .author{width:100%;margin:0;font-size:11px;font-weight:500;line-height:1.2;color:#b59473}
 .column-map #map{background:#f0f3f4;border:4px solid #fff;width:100%}
 .column-map iframe{width:100% !important}

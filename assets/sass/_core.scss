@@ -1972,6 +1972,7 @@ body.page-template-page-fullwidth {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 20px;
+    position: relative;
     @include tab {
       margin-top: 0;
       margin-bottom: 0;
@@ -1986,7 +1987,48 @@ body.page-template-page-fullwidth {
       color: #FFF;
       background: $primary;
     }
+    #moreArticlesList {
+      position: relative;
+      overflow: hidden;
+    }
+    &.expand {
+      #moreArticlesList {
+        ul {
+          height: 100%;
+          overflow: auto;
+          padding-bottom: 20px;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1; 
+        }
+         
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #888; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; 
+        }
+      }
+      .loadmore {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: #fbfaf8;
+        z-index: 20;
+      }
+    }
   }
+
   .author {
     width: 100%;
     margin: 0 0;

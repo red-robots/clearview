@@ -69,8 +69,21 @@ jQuery(document).ready(function($){
 
       }
       $('#moreArticlesList').html(item);
+
+      moreArticles();
+      $(window).on('resize orientationchange',function(){
+        moreArticles()
+      });
     }
   });
+
+  function moreArticles() {
+    if( $('.more-articles').length ) {
+      var titleHeight = $('.more-articles h4').height() + 35;
+      var moreHeight = $('.more-articles').height() - titleHeight;
+      $('#moreArticlesList').css('height', moreHeight+'px');
+    }
+  }
 
   $(document).on('click','.loadmore a',function(){
     var target = $(this);
@@ -86,7 +99,7 @@ jQuery(document).ready(function($){
       'perpage':showAtMost,
       'pg':next
     };
-    console.log(next);
+    
     $.ajax({
       type: "GET",
       url: actionURL,
@@ -98,26 +111,26 @@ jQuery(document).ready(function($){
       },
       success: function(response){
         target.attr('data-next',next);
-        if(response) {
+        if( typeof response.posts!='undefined') {
           var posts = response['posts'];
           var total_pages = response['total_pages'];
-          if(posts.length) {
-            var item = '<ul>';
-            item += getArticleList(posts);
-            item += '</ul>';
-            if(next<total_pages) {
-              item += "<div class='loadmore'><a href='javascript:void(0)' data-reset='' data-records='"+response['total_records']+"' data-totalpages='"+response['total_pages']+"' data-next='"+next+"'>Load More</a></div>";
-            } else {
-              // item += "<div class='loadmore'><a href='javascript:void(0)' data-reset='1' data-records='"+response['total_records']+"' data-totalpages='"+response['total_pages']+"' data-next='1'>Reset</a></div>";
-            }
+          if(total_pages==next) {
+            $('.loadmore').hide();
           }
-          $('#moreArticlesList').html(item);
-          //$('#moreArticlesList ul').append(item);
-        }
-      }
+          if(posts.length) {
+            var item = getArticleList(posts);
+          }
+          //$('#moreArticlesList').html(item);
+          $('#moreArticlesList ul').append(item);
+          $('.more-articles').addClass('expand');
+          $('#moreArticlesList ul').animate({scrollTop: $('#moreArticlesList ul').prop("scrollHeight")}, 500);
+        } 
+      } 
     });
         
   });
+
+  
 
   function getArticleList(posts) {
     var item = '';
@@ -129,7 +142,7 @@ jQuery(document).ready(function($){
         if(termName=="Uncategorized") {
           termName = "";
         }
-        item += "<li>";
+        item += "<li class='animated fadeIn'>";
           item += "<div class='breadcrumb'>";
           if(termName) {
             item += "<div class='author'><a href='"+term.link+"'>"+termName+"</a> | " + termDate + "</div>";
