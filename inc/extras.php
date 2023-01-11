@@ -331,6 +331,21 @@ function team_list_shortcode_func( $atts ) {
   return $output;
 }
 
+add_shortcode( 'newsfeeds', 'newsfeeds_shortcode_func' );
+function newsfeeds_shortcode_func( $atts ) {
+  $a = shortcode_atts( array(
+    'only_category'=>'',
+    'exclude_category'=>'',
+    'exclude_post'=>'',
+  ), $atts );
+  $output = '';
+  ob_start();
+  include( locate_template('parts/news_feed.php') );
+  $output = ob_get_contents();
+  ob_end_clean();
+  return $output;
+}
+
 
 add_shortcode( 'contact_info', 'contact_info_shortcode_func' );
 function contact_info_shortcode_func( $atts ) {

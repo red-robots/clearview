@@ -3,7 +3,7 @@
  * Template Name: Secondary Template
  */
 get_header(); ?>
-<div id="primary" class="content-area default-template secondary-template">
+<div id="primary" class="content-area secondary-template fullwidth-page">
 	<main id="main" class="site-main">
 		<?php while ( have_posts() ) : the_post(); ?>
       <header class="entry-title">

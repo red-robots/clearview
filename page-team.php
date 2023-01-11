@@ -3,7 +3,7 @@
  * Template Name: Our Team
  */
 get_header(); ?>
-<div id="primary" class="content-area default-template">
+<div id="primary" class="content-area team-page">
 	<main id="main" class="site-main">
 		<?php while ( have_posts() ) : the_post(); ?>
       <header class="entry-title">
