@@ -331,8 +331,8 @@ function team_list_shortcode_func( $atts ) {
   return $output;
 }
 
-add_shortcode( 'newsfeeds', 'newsfeeds_shortcode_func' );
-function newsfeeds_shortcode_func( $atts ) {
+add_shortcode( 'newsfeed', 'newsfeed_shortcode_func' );
+function newsfeed_shortcode_func( $atts ) {
   $a = shortcode_atts( array(
     'only_category'=>'',
     'exclude_category'=>'',
