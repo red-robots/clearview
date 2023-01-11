@@ -1823,6 +1823,14 @@ body.single-post {
     color: $primary!important;
   }
 }
+.blue-button.back-button {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  &:hover {
+    background-color: #307ab8!important;
+    color: #FFF!important;
+  }
+}
 
 body.page-template-page-fullwidth {
   #primary .entry-content {
@@ -1947,9 +1955,6 @@ body.page-template-page-fullwidth {
       font-size: 12px;
       line-height: 1;
       position: relative;
-    }
-    span:last-child {
-      // border-left: 1px solid $secondary;
       padding-left: 5px;
       margin-left: 4px;
       &:before {
@@ -1961,6 +1966,13 @@ body.page-template-page-fullwidth {
         position: absolute;
         top: 0;
         left: 0;
+      }
+    }
+    span:first-child {
+      padding-left: 0;
+      margin-left: 0;
+      &:before {
+        display: none;
       }
     }
     a {

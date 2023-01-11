@@ -21,19 +21,7 @@ get_header(); ?>
 
 <script>
 jQuery(document).ready(function($){
-  $(document).on('click','#load-more',function(e){
-    e.preventDefault();
-    var total_pages = $(this).attr('data-totalpages');
-    var currentpage = $(this).attr('data-pg');
-    var next = parseInt($(this).attr('data-pg')) + 1;
-    $('.news-feeds').load('<?php echo get_permalink() ?>?pg='+next+" .news-feeds .wrapper",function(){
-      $('#load-more').attr('data-pg',next);
-      if(next==total_pages) {
-        $('#load-more').remove();
-        $('.moreposts').html('<b>No more post to load</b>');
-      }
-    });
-  });
+
 });
 </script>
 <?php

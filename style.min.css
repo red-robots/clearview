@@ -1603,6 +1603,8 @@ body.single-post #main{padding-top:70px;padding-bottom:70px}
 .wp-block-button.blue{margin-top:20px}
 .blue-button,.wp-block-button.blue a{display:inline-block;text-decoration:none;color:#fff;background-color:#7eb2dd;padding:10px 15px;font-size:16px}
 .blue-button:hover,.wp-block-button.blue a:hover{background-color:#fff !important;color:#3d5588 !important}
+.blue-button.back-button{margin-left:15px;margin-bottom:15px}
+.blue-button.back-button:hover{background-color:#307ab8 !important;color:#fff !important}
 body.page-template-page-fullwidth #primary .entry-content{max-width:100% !important;width:100% !important}
 body.page-template-page-fullwidth .secondary-template .entry-content{padding-left:0;padding-right:0;margin-bottom:0}
 .news-feeds{margin-bottom:80px}
@@ -1621,9 +1623,10 @@ body.page-template-page-fullwidth .secondary-template .entry-content{padding-lef
 .news-feeds .post-item a.more{display:inline-block;color:#b59473;font-weight:500;font-size:13px;text-decoration:none}
 .news-feeds .post-item a.more:hover{color:#cbb49d}
 .news-feeds .metadata{margin-bottom:10px}
-.news-feeds .metadata span{color:#b59473;font-size:12px;line-height:1;position:relative}
-.news-feeds .metadata span:last-child{padding-left:5px;margin-left:4px}
-.news-feeds .metadata span:last-child:before{content:"";display:inline-block;width:1px;height:100%;background:#b59473;position:absolute;top:0;left:0}
+.news-feeds .metadata span{color:#b59473;font-size:12px;line-height:1;position:relative;padding-left:5px;margin-left:4px}
+.news-feeds .metadata span:before{content:"";display:inline-block;width:1px;height:100%;background:#b59473;position:absolute;top:0;left:0}
+.news-feeds .metadata span:first-child{padding-left:0;margin-left:0}
+.news-feeds .metadata span:first-child:before{display:none}
 .news-feeds .metadata a{display:inline-block;text-decoration:none;color:#b59473;font-weight:600}
 .news-feeds .metadata a:hover{color:#cbb49d}
 .moreposts{margin-top:30px;text-align:center}

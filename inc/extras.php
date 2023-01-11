@@ -337,6 +337,8 @@ function newsfeed_shortcode_func( $atts ) {
     'only_category'=>'',
     'exclude_category'=>'',
     'exclude_post'=>'',
+    'show_author'=>'yes',
+    'show_meta'=>'yes',
   ), $atts );
   $output = '';
   ob_start();

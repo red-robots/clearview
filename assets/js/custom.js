@@ -160,4 +160,21 @@ jQuery(document).ready(function ($) {
     $(this).next('.a-text').slideToggle();
     $(this).parents('.a-panel').toggleClass('active');
   });
+  /* NEWSFEED */
+
+  $(document).on('click', '#load-more', function (e) {
+    e.preventDefault();
+    var total_pages = $(this).attr('data-totalpages');
+    var currentpage = $(this).attr('data-pg');
+    var next = parseInt($(this).attr('data-pg')) + 1;
+    var baseURL = $(this).attr('data-baseurl');
+    $('.news-feeds').load(baseURL + '?pg=' + next + " .news-feeds .wrapper", function () {
+      $('#load-more').attr('data-pg', next);
+
+      if (next == total_pages) {
+        $('#load-more').remove();
+        $('.moreposts').html('<b>No more post to load</b>');
+      }
+    });
+  });
 });
