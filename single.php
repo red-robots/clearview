@@ -158,7 +158,6 @@ jQuery(document).ready(function($){
       $(posts).each(function(k,v){
         var term = v.term;
         var termName = (term) ? term.name : '';
-        var termDate = (term) ? '<?php echo get_the_date('m/d/Y') ?>' : '';
         if(termName=="Uncategorized" || term.slug=="case-studies" ) {
           termName = "";
         }
@@ -167,7 +166,7 @@ jQuery(document).ready(function($){
           if(termName) {
             item += "<div class='author'><a href='"+term.link+"'>"+termName+"</a> | " + v.postdate + "</div>";
           } else {
-            item += "<div class='author'>" + termDate + "</div>";
+            item += "<div class='author'>" + v.postdate + "</div>";
           }
           
           item += "</div>";
