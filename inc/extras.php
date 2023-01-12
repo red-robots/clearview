@@ -627,14 +627,51 @@ function more_articles_func( WP_REST_Request $request ) {
   $perpage = ($request->get_param( 'perpage' )) ? $request->get_param( 'perpage' ) : 4;
   $post_type = ($request->get_param( 'posttype' )) ? $request->get_param( 'posttype' ) : 'post';
   $paged = ($request->get_param( 'pg' )) ? $request->get_param( 'pg' ) : 4;
+  $taxonomy = ($request->get_param( 'taxonomy' )) ? $request->get_param( 'taxonomy' ) : 'category';
+  $current_post_id = ($request->get_param( 'pid' )) ? $request->get_param( 'pid' ) : '';
   $args = array(
+    'post__not_in' => array($current_post_id),
     'posts_per_page'=> $perpage,
     'post_type'   => $post_type,
     'post_status' => 'publish',
     'orderby'   => 'date',
     'order'     => 'DESC',
-    'paged'     => $paged
+    'paged'     => $paged,
   );
+
+  $exclude_slug = 'case-studies';
+  $case_study = array();
+  if($current_post_id) {
+    $terms = get_the_terms($current_post_id,$taxonomy);
+    if($terms) {
+      foreach($terms as $t) {
+        if($t->slug==$exclude_slug) {
+          $case_study[] = $t->term_id;
+        }
+      }
+    }
+  }
+
+  if($case_study) {
+    $args['tax_query'] = array(
+        array(
+          'taxonomy' => $taxonomy,
+          'field' => 'term_id',
+          'terms' => $case_study,
+          'operator' => 'IN',
+        )
+    );
+  } else {
+    $args['tax_query'] = array(
+        array(
+          'taxonomy' => $taxonomy,
+          'field' => 'slug',
+          'terms' => $exclude_slug,
+          'operator' => 'NOT IN',
+        )
+    );
+  }
+
   $respond = array();
   $entries = new WP_Query($args);
 
@@ -647,6 +684,7 @@ function more_articles_func( WP_REST_Request $request ) {
       $term = get_the_terms($id,'category');
       $termID = (isset($term) && $term[0] ) ? $term[0]->term_id:'';
       $termName = (isset($term) && $term[0] ) ? $term[0]->name:'';
+      $termSlug = (isset($term) && $term[0] ) ? $term[0]->slug:'';
       $termLink = ($term) ? get_term_link($term[0],'category') : '';
 
       $arg['ID'] = $id;
@@ -654,6 +692,7 @@ function more_articles_func( WP_REST_Request $request ) {
       $arg['permalink'] = get_permalink($id);
       if($term) {
         $arg['term']['term_id'] = $termID;
+        $arg['term']['slug'] = $termSlug;
         $arg['term']['name'] = $termName;
         $arg['term']['postdate'] = $termName;
         $arg['term']['link'] = $termLink;

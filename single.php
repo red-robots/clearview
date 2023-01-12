@@ -8,7 +8,7 @@
  */
 
 $top_class = (has_post_thumbnail()) ? 'half':'full';
-
+$taxonomy = 'category';
 get_header(); ?>
 
 <div id="primary" class="content-area-full content-default single-default-template">
@@ -26,12 +26,16 @@ get_header(); ?>
         <?php if ( has_post_thumbnail() ) { ?>
         <figure>
           <?php the_post_thumbnail(); ?>
-          <p class="author">Written by <?php the_author() ?> | <?php echo get_the_date('m/d/Y'); ?></p>
+          <?php if (get_author_name()) { ?>
+          <p class="author">Written by <?php echo ucwords(get_author_name()) ?> | <?php echo get_the_date('m/d/Y'); ?></p>
+          <?php } else { ?>
+          <p class="author">Posted on <?php echo get_the_date('m/d/Y'); ?></p>
+          <?php } ?>
         </figure>
         <?php } ?>
         <div class="more-articles">
           <h4>More Articles</h4>
-          <div id="moreArticlesList"></div>
+          <div id="moreArticlesList" data-postid="<?php echo get_the_ID(); ?>"></div>
         </div>
       </div>
       <?php } ?>
@@ -54,16 +58,17 @@ get_header(); ?>
 <?php if( get_post_type()=='post' ) { ?>
 <script>
 jQuery(document).ready(function($){
-  var showAtMost = 5;
-  var actionURL = '<?php echo get_site_url() ?>/wp-json/wp/v2/more-articles?perpage='+showAtMost;
+  var showAtMost = 6;
+  var actionURL = '<?php echo get_site_url() ?>/wp-json/wp/v2/more-articles?perpage='+showAtMost+'&taxonomy=<?php echo $taxonomy?>&pid=<?php echo get_the_ID()?>';
   $.get(actionURL + '&pg=1',function(response){
     if(response) {
       var posts = response['posts'];
+      var found = response['total_records'];
       if(posts.length) {
         var item = "<ul>";
         item += getArticleList(posts);
         item += "</ul>";
-        if(response['total_pages']) {
+        if(response['total_pages'] && found>showAtMost) {
           item += "<div class='loadmore'><a href='javascript:void(0)' data-reset='' data-records='"+response['total_records']+"' data-totalpages='"+response['total_pages']+"' data-next='1'>Load More</a></div>";
         }
 
@@ -139,7 +144,7 @@ jQuery(document).ready(function($){
         var term = v.term;
         var termName = (term) ? term.name : '';
         var termDate = (term) ? '<?php echo get_the_date('m/d/Y') ?>' : '';
-        if(termName=="Uncategorized") {
+        if(termName=="Uncategorized" || term.slug=="case-studies" ) {
           termName = "";
         }
         item += "<li class='animated fadeIn'>";
