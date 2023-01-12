@@ -150,7 +150,7 @@ jQuery(document).ready(function($){
         item += "<li class='animated fadeIn'>";
           item += "<div class='breadcrumb'>";
           if(termName) {
-            item += "<div class='author'><a href='"+term.link+"'>"+termName+"</a> | " + termDate + "</div>";
+            item += "<div class='author'><a href='"+term.link+"'>"+termName+"</a> | " + v.postdate + "</div>";
           } else {
             item += "<div class='author'>" + termDate + "</div>";
           }

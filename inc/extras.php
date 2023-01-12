@@ -687,14 +687,16 @@ function more_articles_func( WP_REST_Request $request ) {
       $termSlug = (isset($term) && $term[0] ) ? $term[0]->slug:'';
       $termLink = ($term) ? get_term_link($term[0],'category') : '';
 
+      $post_date = get_the_date('n/j/y',$id); /* one-digit day */
+      //$post_date = get_the_date('m/d/y',$id); /* two-digit day */
       $arg['ID'] = $id;
       $arg['post_title'] = get_the_title();
       $arg['permalink'] = get_permalink($id);
+      $arg['postdate'] = $post_date;
       if($term) {
         $arg['term']['term_id'] = $termID;
         $arg['term']['slug'] = $termSlug;
         $arg['term']['name'] = $termName;
-        $arg['term']['postdate'] = $termName;
         $arg['term']['link'] = $termLink;
       } else {
         $arg['term'] = null;

@@ -67,7 +67,8 @@ if ( $blogs->have_posts() ) {  $totalpost = $blogs->found_posts; ?>
           $term = get_the_terms($id,'category');
           $termName = (isset($term) && $term[0] ) ? $term[0]->name:'';
           $termLink = ($term) ? get_term_link($term[0],'category') : '';
-          $post_date = get_the_date('n/j/y');
+          $post_date = get_the_date('n/j/y'); /* one-digit day */
+          //$post_date = get_the_date('m/d/y'); /* two-digit day */
           $author = ($show_author) ? get_author_name() : '';
           ?>
           <article id="post-id-<?php echo $id ?>" class="post-item animated fadeIn <?php echo ($featImage) ? 'has-image':'no-image' ?>">
