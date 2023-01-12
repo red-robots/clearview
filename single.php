@@ -9,6 +9,15 @@
 
 $top_class = (has_post_thumbnail()) ? 'half':'full';
 $taxonomy = 'category';
+$terms = get_the_terms(get_the_ID(),$taxonomy);
+$case_study = array();
+if($terms) {
+  foreach($terms as $t) {
+    if($t->slug=='case-studies') {
+      $case_study[] = $t->term_id;
+    }
+  }
+}
 get_header(); ?>
 
 <div id="primary" class="content-area-full content-default single-default-template">
@@ -47,6 +56,12 @@ get_header(); ?>
           <h1 class="page-title"><span><?php the_title(); ?></span></h1>
         <?php } ?>
 				<?php the_content(); ?>
+
+        <?php if ($case_study) { ?>
+          <?php if ( $bottomText = get_field('single_post_footer_text','option') ) { ?>
+          <div class="single-post-bottom-text"><?php echo $bottomText ?></div>
+          <?php } ?>
+        <?php } ?>
 			</div>
 
 		<?php endwhile; ?>

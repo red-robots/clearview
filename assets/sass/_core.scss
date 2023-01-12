@@ -1603,7 +1603,7 @@ body.page-template-page-new {
 body.single-post {
   #main {
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
   }
 }
 #content .entry-content p:empty {display:none;}
@@ -2479,6 +2479,21 @@ body.subpage .default-template {
     }
   }
 }
+.is-layout-flex.wp-block-buttons {gap: 0.8em;}
+.single-post-bottom-text {
+  border-top: 1px solid #ededed;
+  margin-top: 50px;
+  padding-top: 20px;
+  font-size: 13px;
+  line-height: 1.4;
+  color:#585858;
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+.pad20 {padding:20px!important}
+.pad30 {padding:30px!important}
+.pad40 {padding:40px!important}
 
 .wp-block-group.alignwide {
   max-width: 1300px;
