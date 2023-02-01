@@ -60,7 +60,8 @@ if ( $blogs->have_posts() ) {  $totalpost = $blogs->found_posts; ?>
           $id = get_the_ID();
           $content = get_the_content();
           $content = ($content) ? strip_tags($content) : '';
-          $excerpt = ($content) ? shortenText($content,100,' ','&hellip;') : '';
+          //$excerpt = ($content) ? shortenText($content,100,' ','&hellip;') : '';
+          //$excerpt = get_the_excerpt();
           $thumbnail_id = get_post_thumbnail_id( get_the_ID() );
           $featImage = wp_get_attachment_image_src($thumbnail_id,'large');
           $stylebg = ($featImage) ? ' style="background-image:url('.$featImage[0].')"':'';
@@ -84,7 +85,7 @@ if ( $blogs->have_posts() ) {  $totalpost = $blogs->found_posts; ?>
                   <?php } ?>
                   <div class="pad">
                       <h3 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-                      <div class="text"><?php echo $excerpt ?></div>
+                      <div class="text"><?php the_excerpt(); ?></div>
                       <div class="button">
                         <a href="<?php echo get_permalink(); ?>" class="more">Read more</a>
                       </div>

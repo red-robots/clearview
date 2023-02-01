@@ -1715,6 +1715,7 @@ body.subpage .default-template .blue-pattern h2 strong{font-weight:normal;displa
 .pad30{padding:30px !important}
 .pad40{padding:40px !important}
 .wp-block-group.alignwide{max-width:1300px;width:100%;margin:0 auto;padding-top:30px;padding-bottom:50px;padding-left:15px;padding-right:15px}
+figure.wp-block-table{margin:0 0 1em}
 .site-footer{background:#fff}
 .site-footer .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-footer .wrapper{padding-top:30px;padding-bottom:30px}
