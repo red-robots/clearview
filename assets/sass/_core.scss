@@ -2508,6 +2508,11 @@ body.subpage .default-template {
 figure.wp-block-table {
   margin: 0 0 1em;
 }
+.wp-block-table td, .wp-block-table th {
+  @include max( $portrait ) {
+    font-size: 2.85vw;
+  }
+}
 
 /* FOOTER */
 .site-footer {

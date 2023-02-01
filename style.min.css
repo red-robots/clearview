@@ -1861,6 +1861,7 @@ html #wpadminbar{position:fixed;top:0;left:0}
 }@media screen and (max-width:600px){.site-footer .fcol{max-width:100%;width:100%;text-align:center}
 }@media screen and (max-width:480px){#site-navigation{max-width:100%}
 body.mobile-menu-open .site-header #site-logo{right:unset;left:20px}
+.wp-block-table td,.wp-block-table th{font-size:2.85vw}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}
 }@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}
 100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}
