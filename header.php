@@ -73,7 +73,7 @@ $hBtnTarget = (isset($headerButton['target']) && $headerButton['target']) ? $hea
 
           <?php if ( has_nav_menu( 'primary' ) ) { ?>
     			<nav id="navigation" class="main-navigation animated fadeIn" role="navigation">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>false, 'menu_id' => 'primary-menu','link_before'=>'<span>','link_after'=>'</span><i>Arrow Down</i>') ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>false, 'menu_id' => 'primary-menu','link_before'=>'<span>','link_after'=>'</span>') ); ?>
           
             <?php if ($hBtnTitle && $hBtnLink) { ?>
             <a href="<?php echo $hBtnLink ?>" target="<?php echo $hBtnTarget ?>" class="head-cta-button"><?php echo $hBtnTitle ?></a>   
